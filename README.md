@@ -1,7 +1,8 @@
 # Client
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.2.
-
+##Start
+If you want to run this project you need to have Node.js on PC. To star in cmp run 'npm install' and than 'ng serve -o'
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
