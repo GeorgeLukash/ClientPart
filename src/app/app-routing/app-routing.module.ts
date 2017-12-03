@@ -6,7 +6,10 @@ import { RegistrationComponent } from '../registration/registration.component';
 import { LoginComponent } from '../login/login.component';
 import { ForgotpassComponent } from '../forgotpass/forgotpass.component';
 import { MainComponent } from '../main/main.component';
-
+import { PlanComponent } from '../plan/plan.component';
+import { BlocksComponent } from '../blocks/blocks.component';
+import { ExercisesComponent } from '../exercises/exercises.component';
+import { UserComponent } from '../user/user.component';
 
 export const router: Routes = [
     {
@@ -29,7 +32,24 @@ export const router: Routes = [
     },
     {
         path: 'main',
-        component: MainComponent
+        component: MainComponent,
+        children: [{
+            path: 'user',
+            component: UserComponent
+        },
+        {
+            path: 'plans',
+            component: PlanComponent
+        },
+        {
+            path: 'blocks',
+            component: BlocksComponent
+        },
+        {
+            path: 'exercises',
+            component: ExercisesComponent
+        }
+        ]
     }
 ];
 

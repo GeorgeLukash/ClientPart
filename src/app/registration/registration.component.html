@@ -43,25 +43,25 @@
                 </p>
             </div>
             <div class="line-text">
-                <span>Day</span>
-                <span>Month</span>
-                <span>Year</span>
+                <span>День</span>
+                <span>Місяць</span>
+                <span>Рік</span>
             </div>
 
             <div class="b-day">
 
                 <select name="day" id="day" [(ngModel)]="day">
-                  <option value="" disabled>Day</option>  
+                  <option value="" disabled>День</option>  
                   <option *ngFor="let day of days" [ngValue]="day"> {{day}} </option>                
               </select>
 
                 <select name="month" id="month" [(ngModel)]="month">
-                    <option value="" disabled>Month</option>
+                    <option value="" disabled>Місяць</option>
                     <option *ngFor="let month of months" [ngValue]="month.id"> {{month.name}} </option>
                     </select>
 
                 <select name="year" id="year" [(ngModel)]="year">
-                  <option value="" disabled>Year</option>
+                  <option value="" disabled>Рік</option>
                   <option *ngFor="let year of years" [ngValue]="year"> {{year}} </option>
                 </select>
 

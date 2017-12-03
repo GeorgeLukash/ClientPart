@@ -34,7 +34,7 @@ h5 {
     background: -o-linear-gradient(#424242, #222);
     /* For Firefox 3.6 to 15 */
     background: -moz-linear-gradient(#424242, #222);
-    /* Standard syntax (must be last) */
+    /* Standard syntax  */
     background: linear-gradient(#424242, #222);
     color: #fff;
     margin-bottom: 50px;

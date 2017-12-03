@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.cust-container {
+    position: absolute;
+    height: 100vh;
+    width: 100vw!important;
+}
+
+.cust-header {
+    position: relative;
+    background-color: #454545;
+    -webkit-box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+    left: 0;
+    top: 0;
+    height: 70px;
+    width: 100%;
+}
+
+.cust-logo {
+    position: relative;
+    left: 0;
+    top: 5%;
+}
+
+.cust-header_img {
+    width: 30px;
+    height: 20px;
+}
+
+.cust-header_span {
+    color: white;
+    margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+}
+
+.cust-left-menu {
+    float: left;
+    width: 30%;
+    height: 92.5vh;
+    /*background-color: #323232;*/
+    overflow: hidden;
+    background: -webkit-linear-gradient(#424242, #222);
+    background: -o-linear-gradient(#424242, #222);
+    background: -moz-linear-gradient(#424242, #222);
+    background: linear-gradient(#424242, #222);
+}
+
+.cust-left-menu h5 {
+    font-family: arial;
+    color: #838383;
+}
+
+
+/*------------First Menu------------*/
+
+.cust-main-list {
+    list-style-type: none;
+    position: relative;
+    top: 15%;
+    left: 40%;
+    /*margin: 50px 0 0 155px;*/
+}
+
+.cust-left-menu img {
+    width: 22px;
+    height: 24px;
+}
+
+.cust-main-list a {
+    text-decoration: none;
+    margin: 2px 0 2px 15px;
+    color: #c7c7c7;
+    font-size: 16px;
+    font-family: arial;
+}
+
+.cust-main-list li {
+    margin: 7px 0;
+}
+
+.cust-main-list a:hover {
+    color: #fff;
+}
+
+
+/*------------First Menu------------*/
+
+
+/*------------Second Menu------------*/
+
+.cust-main-list-1 {
+    list-style-type: none;
+    position: relative;
+    top: 25%;
+    left: 40%;
+    /*margin: 50px 0 0 155px;*/
+}
+
+.cust-left-menu-1 img {
+    width: 22px;
+    height: 24px;
+}
+
+.cust-main-list-1 a {
+    text-decoration: none;
+    margin: 2px 0 2px 15px;
+    color: #c7c7c7;
+    font-size: 16px;
+    font-family: arial;
+}
+
+.cust-main-list-1 li {
+    margin: 7px 0;
+}
+
+.cust-main-list-1 a:hover {
+    color: #fff;
+}
+
+
+/*------------Second Menu------------*/
+
+.cust-content {
+    float: left;
+    width: 70%;
+    height: 92.5vh;
+    background-color: #252525;
+}
