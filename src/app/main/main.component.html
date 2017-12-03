@@ -1,3 +1,70 @@
-<p>
-  main works!
-</p>
+<!--<p style="color:white">Hello. i am main</p>
+
+<div style="display: inline-block; margin-top: 50px" class="test-block">
+    <button type="button" id="user_btn" (click)="goTo('user')">Go to User</button>
+    <button type="button" id="blocks_btn" (click)="goTo('blocks')">Go to Blocks</button>
+    <button type="button" id="plans_btn" (click)="goTo('plans')">Go to Plans</button>
+    <button type="button" id="exercises_btn" (click)="goTo('exercises')">Go to Exercises</button>
+</div>-->
+<div class="cust-container">
+    <div class="cust-header">
+        <div class="cust-logo">
+            <img class="cust-header_img" src="assets/img/logo_main.png">
+            <span class="cust-header_span">guerriero</span>
+        </div>
+    </div>
+
+    <div class="cust-left-menu">
+        <ul class="cust-main-list">
+            <h5>MAIN</h5>
+            <li class="row">
+                <img src="assets/img/icon/plans.png">
+                <a href="/main/plans">Plans Stock</a>
+            </li>
+            <li class="row">
+                <img src="assets/img/icon/calories.png">
+                <a href="/#">Calories eat</a>
+            </li>
+            <li class="row">
+                <img src="assets/img/icon/location.png">
+                <a href="/#">Location</a>
+            </li>
+            <li class="row">
+                <img src="assets/img/icon/event.png">
+                <a href="/#">Event</a>
+            </li>
+            <li class="row">
+                <img src="assets/img/icon/trainer.png">
+                <a href="/#">Trainer or Amateur</a>
+            </li>
+        </ul>
+
+        <ul class="cust-main-list-1">
+            <h5>YOUR</h5>
+            <li class="row">
+                <img src="assets/img/icon/plans.png">
+                <a href="/#">My Plans</a>
+            </li>
+            <li class="row">
+                <img src="assets/img/icon/calories.png">
+                <a href="/#">Calories eat</a>
+            </li>
+            <li class="row">
+                <img src="assets/img/icon/location.png">
+                <a href="/#">My Location</a>
+            </li>
+            <li class="row">
+                <img src="assets/img/icon/run.png">
+                <a href="/#">Run</a>
+            </li>
+            <li class="row">
+                <img src="assets/img/icon/bodyb.png">
+                <a href="/#">Bodybuilding</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="cust-content">
+        <router-outlet></router-outlet>
+    </div>
+</div>
