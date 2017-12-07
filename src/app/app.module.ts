@@ -10,14 +10,10 @@ import { routes } from './app-routing/app-routing.module';
 import { RegistrationComponent } from './registration/registration.component';
 import { ForgotpassComponent } from './forgotpass/forgotpass.component';
 import { MainComponent } from './main/main.component';
-<<<<<<< HEAD
-import { ProfileComponent } from './profile/profile.component';
-=======
 import { PlanComponent } from './plan/plan.component';
 import { BlocksComponent } from './blocks/blocks.component';
 import { ExercisesComponent } from './exercises/exercises.component';
 import { UserComponent } from './user/user.component';
->>>>>>> 3feff7f1dd6455484fc6bbbce7d5d4a63ca2e6f4
 
 @NgModule({
   declarations: [
@@ -26,20 +22,15 @@ import { UserComponent } from './user/user.component';
     RegistrationComponent,
     ForgotpassComponent,
     MainComponent,
-<<<<<<< HEAD
-    ProfileComponent
-=======
     PlanComponent,
     BlocksComponent,
     ExercisesComponent,
     UserComponent
->>>>>>> 3feff7f1dd6455484fc6bbbce7d5d4a63ca2e6f4
   ],
   imports: [
       BrowserModule,
       FormsModule,
       HttpModule,
-      routes
     BrowserModule,
     FormsModule,
     HttpModule,
