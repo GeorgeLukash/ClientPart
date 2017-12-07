@@ -14,6 +14,7 @@ import { PlanComponent } from './plan/plan.component';
 import { BlocksComponent } from './blocks/blocks.component';
 import { ExercisesComponent } from './exercises/exercises.component';
 import { UserComponent } from './user/user.component';
+import { ApiService } from './services/api.service';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,7 @@ import { UserComponent } from './user/user.component';
     HttpModule,
     routes
   ],
-  providers: [],
+  providers: [ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
