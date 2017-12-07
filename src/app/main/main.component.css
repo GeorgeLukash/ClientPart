@@ -43,11 +43,14 @@
 }
 
 .user-info {
+    /*background-color: red;*/
     float: right;
-    height: 60px;
+    height: 58px;
     width: 200px;
+    padding: 5px 7px;
     /*border: 1px solid rgba(0, 0, 0, 0.1);*/
     margin: 5px 60px 0 0;
+    border-radius: 5px;
 }
 
 .user-phot {
@@ -61,6 +64,11 @@
     font-family: arial;
     color: rgba(255, 255, 255, 0.7);
     padding: 2px 0 0 20px;
+}
+
+.user-info:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: rgba(0, 0, 0, 0.7)!important;
 }
 
 

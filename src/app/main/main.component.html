@@ -11,7 +11,7 @@
         <div class="cust-logo">
             <img class="cust-header_img" src="assets/img/logo_main.png" alt="Here must be logo">
             <span class="cust-header_span">guerriero</span>
-            <div class="user-info">
+            <div class="user-info" (click)="goTo('user')">
                 <img class="user-phot" src="assets/img/users/user_profile_male.jpg" alt="User photo must be here">
                 <span>John Smith</span>
             </div>
@@ -47,7 +47,7 @@
             <h5>YOUR</h5>
             <li class="row">
                 <img src="assets/img/icon/plans.png">
-                <a href="/#">My Plans</a>
+                <a href="/main/plans">My Plans</a>
             </li>
             <li class="row">
                 <img src="assets/img/icon/calories.png">
@@ -59,11 +59,11 @@
             </li>
             <li class="row">
                 <img src="assets/img/icon/run.png">
-                <a href="/#">Run</a>
+                <a href="/main/exercises">My progress</a>
             </li>
             <li class="row">
                 <img src="assets/img/icon/bodyb.png">
-                <a href="/#">Bodybuilding</a>
+                <a href="/main/blocks">Bodybuilding</a>
             </li>
         </ul>
     </div>

@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { LoginComponent } from './login/login.component';
 import { AlertModule } from 'ngx-bootstrap';
+import { Plan } from './model/plan.component.model';
 
 import { routes } from './app-routing/app-routing.module';
 import { RegistrationComponent } from './registration/registration.component';
@@ -26,23 +27,18 @@ import { NewsComponent } from './news/news.component';
     RegistrationComponent,
     ForgotpassComponent,
     MainComponent,
-
     ProfileComponent,
-    PlanComponent,
-    BlocksComponent,
-    ExercisesComponent,
-    UserComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule,
-    routes,
     PlanComponent,
     BlocksComponent,
     ExercisesComponent,
     UserComponent,
     NewsComponent
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    HttpModule,
+    routes
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]
