@@ -9,6 +9,9 @@
     width: 100vw!important;
 }
 
+
+/*----------------------Header----------------------*/
+
 .cust-header {
     position: relative;
     background-color: #454545;
@@ -38,6 +41,30 @@
     font-family: 'Montserrat', sans-serif;
     font-size: 32px;
 }
+
+.user-info {
+    float: right;
+    height: 60px;
+    width: 200px;
+    /*border: 1px solid rgba(0, 0, 0, 0.1);*/
+    margin: 5px 60px 0 0;
+}
+
+.user-phot {
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+}
+
+.user-info span {
+    font-size: 20px;
+    font-family: arial;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 2px 0 0 20px;
+}
+
+
+/*----------------------Header----------------------*/
 
 .cust-left-menu {
     float: left;
@@ -126,9 +153,15 @@
 
 /*------------Second Menu------------*/
 
+
+/*------------Content------------*/
+
 .cust-content {
     float: left;
     width: 70%;
     height: 92.5vh;
     background-color: #252525;
 }
+
+
+/*------------Content------------*/
