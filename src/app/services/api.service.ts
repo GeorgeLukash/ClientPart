@@ -70,7 +70,7 @@ export class ApiService
         ): Observable<any> {
     
             this.addToken(url, options);
-    
+            options['headers']['Content-Type'] = 'application/json; charset=utf-8';
             let observable = this.http.request('http://localhost:57848/' + url, options);
 
             return observable;

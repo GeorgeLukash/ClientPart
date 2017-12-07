@@ -15,6 +15,7 @@ import { BlocksComponent } from './blocks/blocks.component';
 import { ExercisesComponent } from './exercises/exercises.component';
 import { UserComponent } from './user/user.component';
 import { ApiService } from './services/api.service';
+import {NewsComponent} from './news/news.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ApiService } from './services/api.service';
     PlanComponent,
     BlocksComponent,
     ExercisesComponent,
-    UserComponent
+    UserComponent,
+    NewsComponent
   ],
   imports: [
       BrowserModule,
