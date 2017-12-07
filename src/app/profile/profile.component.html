@@ -14,4 +14,6 @@
         </div>
         <button type="Submit" value="Submit" (click)="change_profile()">Submit</button>
     </div>
+    <input type="file" accept="image/*" (change)='changeListener($event)'>
+    <button type="Submit" value="Submit" (click)="change_image()">Submit</button>
 </div>

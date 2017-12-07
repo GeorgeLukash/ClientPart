@@ -21,24 +21,6 @@ export class LoginComponent implements OnInit {
         this.showError = false;
     }
 
-    changeListener($event) : void {
-        var files = $event.target.files;
-        var file = files[0];
-      
-      if (files && file) {
-          var reader = new FileReader();
-  
-          reader.onload =this._handleReaderLoaded.bind(this);
-  
-          reader.readAsBinaryString(file);
-      }
-    }
-
-    _handleReaderLoaded(readerEvt) {
-        var binaryString = readerEvt.target.result;
-               this.images= btoa(binaryString);
-       }
-       
     login() {
 
         const arrKey: string[] = [];
@@ -61,7 +43,7 @@ export class LoginComponent implements OnInit {
                         (response) => {
                          localStorage.setItem('token', response.json().access_token);
                          localStorage.setItem('user_type', response.json().user_type);
-                         this.router.navigate(['./profile']);
+                         //this.router.navigate(['main/profile']);
                          });
                         }
 }

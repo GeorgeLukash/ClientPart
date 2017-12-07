@@ -16,6 +16,7 @@ import { ExercisesComponent } from './exercises/exercises.component';
 import { UserComponent } from './user/user.component';
 import { ApiService } from './services/api.service';
 import {NewsComponent} from './news/news.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import {NewsComponent} from './news/news.component';
     BlocksComponent,
     ExercisesComponent,
     UserComponent,
+    ProfileComponent,
     NewsComponent
   ],
   imports: [
