@@ -11,14 +11,13 @@ import { routes } from './app-routing/app-routing.module';
 import { RegistrationComponent } from './registration/registration.component';
 import { ForgotpassComponent } from './forgotpass/forgotpass.component';
 import { MainComponent } from './main/main.component';
-
-import { ProfileComponent } from './profile/profile.component';
 import { PlanComponent } from './plan/plan.component';
 import { BlocksComponent } from './blocks/blocks.component';
 import { ExercisesComponent } from './exercises/exercises.component';
 import { UserComponent } from './user/user.component';
 import { ApiService } from './services/api.service';
-import { NewsComponent } from './news/news.component';
+import {NewsComponent} from './news/news.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -27,14 +26,17 @@ import { NewsComponent } from './news/news.component';
     RegistrationComponent,
     ForgotpassComponent,
     MainComponent,
-    ProfileComponent,
     PlanComponent,
     BlocksComponent,
     ExercisesComponent,
     UserComponent,
+    ProfileComponent,
     NewsComponent
   ],
   imports: [
+      BrowserModule,
+      FormsModule,
+      HttpModule,
     BrowserModule,
     FormsModule,
     HttpModule,

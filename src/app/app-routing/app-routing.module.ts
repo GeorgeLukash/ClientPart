@@ -6,12 +6,11 @@ import { RegistrationComponent } from '../registration/registration.component';
 import { LoginComponent } from '../login/login.component';
 import { ForgotpassComponent } from '../forgotpass/forgotpass.component';
 import { MainComponent } from '../main/main.component';
-
-import { ProfileComponent } from '../profile/profile.component';
 import { PlanComponent } from '../plan/plan.component';
 import { BlocksComponent } from '../blocks/blocks.component';
 import { ExercisesComponent } from '../exercises/exercises.component';
 import { UserComponent } from '../user/user.component';
+import { ProfileComponent } from '../profile/profile.component';
 
 export const router: Routes = [
     {
@@ -50,11 +49,12 @@ export const router: Routes = [
         {
             path: 'exercises',
             component: ExercisesComponent
-        }]
-    },
-    {
-        path: 'profile',
-        component: ProfileComponent
+        },
+        {
+            path: 'profile',
+            component: ProfileComponent
+        }
+        ]
     }
 ];
 
