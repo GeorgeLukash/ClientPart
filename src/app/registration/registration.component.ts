@@ -16,11 +16,11 @@ export class RegistrationComponent implements OnInit {
     private user: RegisterUser = new RegisterUser();
     private date: DateOutput = new DateOutput();
     private sex_flag: Boolean = false;
-    
+
     constructor(private router: Router, private apiService: ApiService) { }
 
     ngOnInit() {
-      
+
     }
     userMale(flag) {
         if (flag) {
@@ -33,7 +33,7 @@ export class RegistrationComponent implements OnInit {
     signUp() {
         if (this.user.email != null && this.user.firstname != null && this.user.password != null) {
             this.userMale(this.sex_flag);
-           this.user.age =  new Date().getFullYear() - this.date.year;
+            this.user.age = new Date().getFullYear() - this.date.year;
             this.apiService.post('auth/register', JSON.stringify(this.user))
                 .subscribe(
                 () => { },
@@ -41,7 +41,7 @@ export class RegistrationComponent implements OnInit {
                 );
             // this.addNewUser(this.id, userData);
 
-             this.router.navigate(['./login']);
+            this.router.navigate(['./login']);
         } else {
             alert('Error: Your data is empty');
         }

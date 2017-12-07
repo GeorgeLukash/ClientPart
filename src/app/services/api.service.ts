@@ -6,11 +6,10 @@ import { Observable } from 'rxjs/Observable';
 import * as $ from 'jquery';
 
 @Injectable()
-export class ApiService 
-{
-    private token:string = localStorage.getItem('token');
+export class ApiService {
+    private token: string = localStorage.getItem('token');
 
-    private defaultOptions: {[key: string]: any} = {
+    private defaultOptions: { [key: string]: any } = {
         headers: {
             'Accept': '*/*'
         }
@@ -18,69 +17,68 @@ export class ApiService
 
     constructor(
         private http: Http,
-        private router: Router)
-        {  }
+        private router: Router) { }
 
-        post(
-            url: string, 
-            body: any, 
-            options?: {[key: string]: any}
-        ): Observable<any> {
-            return this.request(
-                url,
-                $.extend(true, { method: 'POST', body: body }, this.defaultOptions, options)
-            );
-        }
-    
-        get(
-            url: string, 
-            options?: {[key: string]: any}
-        ): Observable<any> {
-            return this.request(
-                url, 
-                $.extend(true, { method: 'GET' }, this.defaultOptions, options)
-            );
-        }
-    
-        delete(
-            url: string, 
-            body?: any, 
-            options?: {[key: string]: any}
-        ): Observable<any> {
-            return this.request(
-                url, 
-                $.extend(true, { method: 'DELETE', body: body }, this.defaultOptions, options)
-            );
-        }
+    post(
+        url: string,
+        body: any,
+        options?: { [key: string]: any }
+    ): Observable<any> {
+        return this.request(
+            url,
+            $.extend(true, { method: 'POST', body: body }, this.defaultOptions, options)
+        );
+    }
 
-        put(
-            url: string, 
-            body?: any, 
-            options?: {[key: string]: any}
-        ): Observable<any> {
-            return this.request(
-                url, 
-                $.extend(true, { method: 'PUT', body: body }, this.defaultOptions, options)
-            );
-        }
-    
-        private request(
-            url: string, 
-            options: {[key: string]: any}
-        ): Observable<any> {
-    
-            this.addToken(url, options);
-            options['headers']['Content-Type'] = 'application/json; charset=utf-8';
-            let observable = this.http.request('http://localhost:57848/' + url, options);
+    get(
+        url: string,
+        options?: { [key: string]: any }
+    ): Observable<any> {
+        return this.request(
+            url,
+            $.extend(true, { method: 'GET' }, this.defaultOptions, options)
+        );
+    }
 
-            return observable;
+    delete(
+        url: string,
+        body?: any,
+        options?: { [key: string]: any }
+    ): Observable<any> {
+        return this.request(
+            url,
+            $.extend(true, { method: 'DELETE', body: body }, this.defaultOptions, options)
+        );
+    }
+
+    put(
+        url: string,
+        body?: any,
+        options?: { [key: string]: any }
+    ): Observable<any> {
+        return this.request(
+            url,
+            $.extend(true, { method: 'PUT', body: body }, this.defaultOptions, options)
+        );
+    }
+
+    private request(
+        url: string,
+        options: { [key: string]: any }
+    ): Observable<any> {
+
+        this.addToken(url, options);
+        options['headers']['Content-Type'] = 'application/json; charset=utf-8';
+        const observable = this.http.request('http://localhost:57848/' + url, options);
+
+        return observable;
+    }
+
+    private addToken(url: string, options: { [key: string]: any }): void {
+        const token = localStorage.getItem('token');
+        if (token) {
+            options['headers']['Authorization'] = `Bearer ${token}`;
         }
-    
-        private addToken(url: string, options: {[key: string]: any}): void {
-            let token = localStorage.getItem('token');
-            if (token) {
-                options['headers']['Authorization'] = `Bearer ${token}`;
-            }
-        }
-    
+    }
+
 }

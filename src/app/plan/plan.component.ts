@@ -9,15 +9,14 @@ import { ApiService } from '../services/api.service';
 })
 export class PlanComponent implements OnInit {
 
-private plan:Plan[];
+  private plan: Plan[];
 
-  constructor(private apiService:ApiService) { }
+  constructor(private apiService: ApiService) { }
 
   ngOnInit() {
-    this.apiService.get('user/plans').subscribe((response)=>
-    {
-     this.plan = response.json();
-    })
+    this.apiService.get('user/plans').subscribe((response) => {
+      this.plan = response.json();
+    });
   }
 
 }
