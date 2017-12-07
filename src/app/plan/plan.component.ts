@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Plan } from '../model/plan.component.model';
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'app-plan',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlanComponent implements OnInit {
 
-  constructor() { }
+  private plan: Plan[];
+
+  constructor(private apiService: ApiService) { }
 
   ngOnInit() {
+    this.apiService.get('user/plans').subscribe((response) => {
+      this.plan = response.json();
+    });
   }
 
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Http, RequestOptions, RequestOptionsArgs, Headers} from '@angular/http'
 import {Profile} from '../model/profile.component.model'
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'profile',
@@ -11,13 +12,11 @@ export class ProfileComponent implements OnInit {
 
     public profile:Profile;
 
-  constructor(private httpService:Http) { }
+  constructor(private apiService:ApiService) { }
 
   ngOnInit() {
-    const headers = new Headers({ 'Content-Type': 'application/json','Authorization':'Bearer '+localStorage.getItem('token') });
 
-    let opts:RequestOptionsArgs = { headers: headers };
-     this.httpService.get('http://localhost:57848/user/profile',opts).subscribe( (response) => 
+     this.apiService.get('user/profile').subscribe( (response) => 
      {
         this.profile = response.json();
      },
@@ -26,12 +25,9 @@ export class ProfileComponent implements OnInit {
          console.log(error.json());
     });
   }
-  change_profile()
-
-  { const headers = new Headers({ 'Content-Type': 'application/json','Authorization':'Bearer '+localStorage.getItem('token') });
   
-      let opts:RequestOptionsArgs = { headers: headers };
-      console.log(this.profile);
-      this.httpService.put('http://localhost:57848/user/profile',this.profile,opts).subscribe((response)=>console.log(response));
+  change_profile()
+  { 
+      this.apiService.put('user/profile').subscribe((response)=>console.log(response));
   }
 }
