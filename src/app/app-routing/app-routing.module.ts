@@ -11,6 +11,7 @@ import { BlocksComponent } from '../blocks/blocks.component';
 import { ExercisesComponent } from '../exercises/exercises.component';
 import { UserComponent } from '../user/user.component';
 import { ProfileComponent } from '../profile/profile.component';
+import { NewsComponent } from '../news/news.component';
 
 export const router: Routes = [
     {
@@ -53,6 +54,10 @@ export const router: Routes = [
         {
             path: 'profile',
             component: ProfileComponent
+        },
+        {
+            path: 'news',
+            component: NewsComponent
         }
         ]
     }
