@@ -16,7 +16,7 @@ import { BlocksComponent } from './blocks/blocks.component';
 import { ExercisesComponent } from './exercises/exercises.component';
 import { UserComponent } from './user/user.component';
 import { ApiService } from './services/api.service';
-import {NewsComponent} from './news/news.component';
+import { NewsComponent } from './news/news.component';
 import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
@@ -34,9 +34,9 @@ import { ProfileComponent } from './profile/profile.component';
     NewsComponent
   ],
   imports: [
-      BrowserModule,
-      FormsModule,
-      HttpModule,
+    BrowserModule,
+    FormsModule,
+    HttpModule,
     BrowserModule,
     FormsModule,
     HttpModule,
