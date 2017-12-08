@@ -39,7 +39,6 @@ export class RegistrationComponent implements OnInit {
                 () => { },
                 err => console.error(err)
                 );
-            // this.addNewUser(this.id, userData);
 
             this.router.navigate(['./login']);
         } else {

@@ -12,8 +12,8 @@
             <img class="cust-header_img" src="assets/img/logo_main.png" alt="Here must be logo">
             <span class="cust-header_span">guerriero</span>
             <div class="user-info" (click)="goTo('user')">
-                <img class="user-phot" src="assets/img/users/user_profile_male.jpg" alt="User photo must be here">
-                <span>John Smith</span>
+                <img class="user-phot" src="{{image}}" alt="User photo must be here">
+                <span>{{this.firstname}} {{this.lastname}}</span>
             </div>
         </div>
     </div>
