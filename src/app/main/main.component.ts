@@ -26,4 +26,10 @@ export class MainComponent implements OnInit {
   goTo(path) {
     this.router.navigate(['./main', path]);
   }
+
+  logout()
+  {
+    localStorage.removeItem('token');
+    this.router.navigate([''])
+  }
 }

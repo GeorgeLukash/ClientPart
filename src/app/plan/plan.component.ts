@@ -19,4 +19,8 @@ export class PlanComponent implements OnInit {
     });
   }
 
+  addPlan()
+  {
+    alert('Still in developing')
+  }
 }

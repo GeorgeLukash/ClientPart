@@ -11,10 +11,13 @@
         <div class="cust-logo">
             <img class="cust-header_img" src="assets/img/logo_main.png" alt="Here must be logo">
             <span class="cust-header_span">guerriero</span>
+            <div class="logout" (click)='logout()'>Log out</div>
             <div class="user-info" (click)="goTo('user')">
                 <img class="user-phot" src="{{image}}" alt="User photo must be here">
                 <span>{{this.firstname}} {{this.lastname}}</span>
             </div>
+            
+            
         </div>
     </div>
 

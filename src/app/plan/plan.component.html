@@ -3,10 +3,9 @@
     <div class="all-exercise row">
         <div *ngFor='let c of plan' id="new-exercise">
         </div>
-        <div id="new-exercise">
-        </div>
+        
         <div id="add-new-exercise">
-            <h2>Add new</h2>
+            <h2 (click)='addPlan()'>Add new</h2>
         </div>
     </div>
 </div>
