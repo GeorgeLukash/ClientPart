@@ -37,6 +37,7 @@ export class ProfileComponent implements OnInit {
   {
     this.apiService.post('user/profile/image',JSON.stringify(this.image)).subscribe();
   }
+  
   changeListener($event) : void {
     var files = $event.target.files;
     var file = files[0];

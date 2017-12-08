@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Profile } from '../model/profile.component.model';
+import { ApiService } from '../services/api.service';
+import { Image } from '../model/image.model';
 
 @Component({
   selector: 'app-user',
@@ -7,9 +10,41 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserComponent implements OnInit {
 
-  constructor() { }
+private profile:Profile;
+ private image:Image = new Image();
 
-  ngOnInit() {
+  constructor(private apiService:ApiService) { }
+
+  ngOnInit() 
+  {
+    this.apiService.get('user/profile').subscribe((response)=>
+    {
+      this.profile = response.json();
+    })
   }
 
+  changeListener($event) : void {
+    var files = $event.target.files;
+    var file = files[0];
+  
+  if (files && file) {
+      var reader = new FileReader();
+
+      reader.onload =this._handleReaderLoaded.bind(this);
+
+      reader.readAsBinaryString(file);
+  }
+}
+
+_handleReaderLoaded(readerEvt) {
+  var binaryString = readerEvt.target.result;
+  this.image.image= btoa(binaryString);
+  this.apiService.post('user/profile/image',JSON.stringify(this.image)).subscribe((response)=>
+{
+  this.apiService.get('user/profile').subscribe((response)=>
+  {
+    this.profile = response.json();
+  })
+});
+}
 }

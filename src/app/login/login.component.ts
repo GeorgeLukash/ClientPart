@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
             (response) => {
                 localStorage.setItem('token', response.json().access_token);
                 localStorage.setItem('user_type', response.json().user_type);
-                //this.router.navigate(['main/profile']);
+                this.router.navigate(['main/news']);
             });
     }
 }
