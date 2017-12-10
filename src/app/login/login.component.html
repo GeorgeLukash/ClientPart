@@ -11,20 +11,13 @@
             </div>
 
             <input type="password" placeholder="Enter password" autocomplete="new-password" id="psw" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required #passInput="ngModel">
-            <div class="show-error" *ngIf="passInput.errors && passInput.errors.required && passInput.dirty">
-                <span>Password cant be empty</span>
-            </div>
-            <div class="show-error" *ngIf="passInput.errors && passInput.errors.pattern && passInput.dirty">
-                <span>Wrong format password</span>
-            </div>
-
+           
             <button type="button" id="login-btn" (click)="login()">SIGN IN</button><br/>
             <div class="last">
                 <!--<span><a href="/forgot-password" target="_blank">Forgot Password?</a></span><br />-->
                 <span><a class="reg" href="/registration" target="_blank">Registration</a></span><br/>
             </div>
 
-            <!-- <input type="file" accept="image/*" (change)='changeListener($event)'> -->
         </form>
     </div>
     <div>
