@@ -10,41 +10,37 @@ import { Image } from '../model/image.model';
 })
 export class UserComponent implements OnInit {
 
-private profile:Profile;
- private image:Image = new Image();
+  private profile: Profile;
+  private image: Image = new Image();
 
-  constructor(private apiService:ApiService) { }
+  constructor(private apiService: ApiService) { }
 
-  ngOnInit() 
-  {
-    this.apiService.get('user/profile').subscribe((response)=>
-    {
+  ngOnInit() {
+    this.apiService.get('user/profile').subscribe((response) => {
       this.profile = response.json();
-    })
+    });
   }
 
-  changeListener($event) : void {
-    var files = $event.target.files;
-    var file = files[0];
-  
-  if (files && file) {
-      var reader = new FileReader();
+  changeListener($event): void {
+    const files = $event.target.files;
+    const file = files[0];
 
-      reader.onload =this._handleReaderLoaded.bind(this);
+    if (files && file) {
+      const reader = new FileReader();
+
+      reader.onload = this._handleReaderLoaded.bind(this);
 
       reader.readAsBinaryString(file);
+    }
   }
-}
 
-_handleReaderLoaded(readerEvt) {
-  var binaryString = readerEvt.target.result;
-  this.image.image= btoa(binaryString);
-  this.apiService.post('user/profile/image',JSON.stringify(this.image)).subscribe((response)=>
-{
-  this.apiService.get('user/profile').subscribe((response)=>
-  {
-    this.profile = response.json();
-  })
-});
-}
+  _handleReaderLoaded(readerEvt) {
+    const binaryString = readerEvt.target.result;
+    this.image.image = btoa(binaryString);
+    this.apiService.post('user/profile/image', JSON.stringify(this.image)).subscribe((response) => {
+      this.apiService.get('user/profile').subscribe((response) => {
+        this.profile = response.json();
+      });
+    });
+  }
 }

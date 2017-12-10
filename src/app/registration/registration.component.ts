@@ -34,6 +34,7 @@ export class RegistrationComponent implements OnInit {
         if (this.user.email != null && this.user.firstname != null && this.user.password != null) {
             this.userMale(this.sex_flag);
             this.user.age = new Date().getFullYear() - this.date.year;
+            console.log(this.user);
             this.apiService.post('auth/register', JSON.stringify(this.user))
                 .subscribe(
                 () => { },

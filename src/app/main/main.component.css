@@ -23,12 +23,12 @@
     height: 70px;
     width: 100%;
 }
-.logout
-{
+
+.logout {
     float: right;
     height: 58px;
     width: 30px;
-    padding: 5px 7px;    
+    padding: 5px 7px;
 }
 
 .cust-logo {
@@ -174,7 +174,7 @@
 
 .cust-content {
     float: left;
-    width: 70%;
+    width: 85%;
     height: 92.5vh;
     background-color: #252525;
 }
