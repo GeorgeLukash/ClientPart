@@ -17,6 +17,7 @@ export class RegistrationComponent implements OnInit {
     private date: DateOutput = new DateOutput();
     private sex_flag: Boolean = false;
     private year: number;
+
     constructor(private router: Router, private apiService: ApiService) { }
 
     ngOnInit() {
@@ -34,8 +35,7 @@ export class RegistrationComponent implements OnInit {
         if (this.user.email != null && this.user.firstname != null && this.user.password != null) {
             this.userMale(this.sex_flag);
             this.user.age = new Date().getFullYear() - this.year;
-            console.log(this.year);
-            console.log(this.user);
+
             this.apiService.post('auth/register', JSON.stringify(this.user))
                 .subscribe(
                 () => { },
