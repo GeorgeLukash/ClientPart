@@ -1,25 +1,28 @@
 <div class="main">
     <table class="tg">
-        <tr>
-            <th rowspan="5"><img class="user-phot" src="{{profile.image}}" alt="User photo must be here"></th>
-            <th>{{profile.firstname}} {{profile.lastname}}</th>
-        </tr>
-        <tr>
-            <td>Height:{{profile.height}}</td>
-        </tr>
-        <tr>
-            <td>Age:{{profile.age}}</td>
-        </tr>
-        <tr>
-            <td>Weight:{{profile.weight}}</td>
-        </tr>
-        <tr>
-            <td>Email: {{profile.email}}</td>
-        </tr>
-        <tr>
-            <td> <input type="file" value="Upload photo" accept="image/*" (change)='changeListener($event)'>
-                
-            <td></td>
-        </tr>
+      <tr>
+        <th rowspan="5" class="photo-holder">
+          <img class="user-phot" src="assets/img/users/user_profile_male.jpg" alt="User photo must be here">
+        </th>
+        <th class="user-name" >John Smith</th>
+      </tr>
+      <tr>
+        <td class="user-age">Age: 25</td>
+      </tr>
+      <tr>
+        <td class="user-height" >Height: 152</td>
+      </tr>
+      <tr>
+        <td class="user-weight">Weight: 100</td>
+      </tr>
+      <tr>
+        <td class="user-email">Email: someemail</td>
+      </tr>
+      <tr>
+        <td class="btn-holder">
+        <button type="submit" class="butt">Upload new photo</button></td>
+        <td></td>
+      </tr>
     </table>
-</div>
+  </div>
+  
