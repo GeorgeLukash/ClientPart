@@ -1,23 +1,18 @@
-<!--<p style="color:white">Hello. i am main</p>
-
-<div style="display: inline-block; margin-top: 50px" class="test-block">
-    <button type="button" id="user_btn" (click)="goTo('user')">Go to User</button>
-    <button type="button" id="blocks_btn" (click)="goTo('blocks')">Go to Blocks</button>
-    <button type="button" id="plans_btn" (click)="goTo('plans')">Go to Plans</button>
-    <button type="button" id="exercises_btn" (click)="goTo('exercises')">Go to Exercises</button>
-</div>-->
 <div class="cust-container">
     <div class="cust-header">
-        <div class="cust-logo">
+        <div class="logo-c">
             <img class="cust-header_img" src="assets/img/logo_main.png" alt="Here must be logo">
             <span class="cust-header_span">guerriero</span>
-            <div class="logout" (click)='logout()'>Log out</div>
+        </div>
+        <div class="wrapper-he">
             <div class="user-info" (click)="goTo('user')">
                 <img class="user-phot" src="{{image}}" alt="User photo must be here">
                 <span>{{this.firstname}} {{this.lastname}}</span>
             </div>
 
-
+            <button class="logout" (click)='logout()'>
+                <img src="assets/img/logout.png" alt="Log out" />
+            </button>
         </div>
     </div>
 
