@@ -74,14 +74,44 @@ table {
     border-width: 0 1px 1px 0;
     border-style: solid;
     border-color: rgba(0, 0, 0, 0.4);
+    color: rgba(255,255,255,0.7);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:10px;
+    text-align: center;
+    vertical-align: middle;
 }
-
+.calories h6{
+    font-family: 'Montserrat', sans-serif;
+    font-size:32px;
+}
+.calories img{
+    height: 20px;
+    width:20px;
+    border-radius: 15px;
+    float:left;
+    margin:9px 10px 0 7px;
+}
 .speed {
     /*background-color: green;*/
     height: 100px;
     width: 40%;
+    color: rgba(255,255,255,0.7);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:10px;
+    text-align: center;
+    vertical-align: middle;
 }
 
+.speed h6{
+    font-family: 'Montserrat', sans-serif;
+    font-size:32px;
+}
+.speed img{
+    height: 25px;
+    width:25px;
+    float:left;
+    margin:9px 10px 0 7px;
+}
 .result-exercise {
     /*background-color: blue;*/
     height: 200px;
@@ -89,6 +119,26 @@ table {
 }
 
 
+
+.exrcise-holder{
+    text-align: center;
+    overflow: auto;
+}
+
+.exrcise-holder h6{
+    margin: 0 0 16px 0;
+}
+
+.exrcise-holder input{
+    border:0 solid;
+    border-radius:15px;
+    margin:5px 0; 
+    height: 20px; 
+    border-radius: 25px;
+    padding: 0 0 0 15px;
+    background-color: #252525;
+    color: white!important;      
+}
 /*-------------------------------*/
 
 .success {

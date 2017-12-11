@@ -45,12 +45,13 @@
 }
 
 .logout {    
-    /*background-color: red;*/
+    /*background-color: red!important;*/
+    height:58px;
     float: left;
-    background-color: rgba(0,0,0,0);
+    background-color: rgba(0,0,0,0.1);
     border:0 solid;
     border-radius: 7px;
-    margin-top:15px;
+    /*margin-top:15px;*/
 }
 
 .logout img{

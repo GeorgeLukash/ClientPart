@@ -1,5 +1,5 @@
 <div class="main">
-    <table class="tg">
+    <!--<table class="tg">
         <tr>
             <th rowspan="5" class="photo-holder">
                 <img class="user-phot" src="{{profile.image}}" alt="User photo must be here">
@@ -24,5 +24,32 @@
             </td>
             <td></td>
         </tr>
-    </table>
+    </table>-->
+    <div class="portfoliocard">
+            <div class="coverphoto"></div>
+            <div class="profile_picture">
+                    <img class="user-phot" src="{{profile.image}}" alt="User photo must be here">
+            </div>
+            <div class="left_col">
+                <div class="followers">
+                    <div class="follow_count">18,541</div>
+                    Followers
+                </div>
+                <div class="following">
+                    <div class="follow_count">181</div>
+                    Following
+                </div>
+            </div>
+            <div class="right_col">
+                <h2 class="name">{{profile.firstname}} {{profile.lastname}}</h2>
+                <h3 class="location">San Francisco, CA</h3>
+                <ul class="contact_information">
+                    <li class="work">Age: {{profile.age}}</li>
+                    <li class="website">Weight: {{profile.weight}}</li>
+                    <li class="mail">Email: {{profile.email}}</li>
+                    <li class="phone">Height: {{profile.height}}</li>
+                    <li class="resume"><a href="#" class="nostyle">download resume</a></li>
+                </ul>
+            </div>
+            </div>
 </div>
