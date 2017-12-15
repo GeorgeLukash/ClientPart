@@ -8,4 +8,6 @@ export class RegisterUser
     public weight: number;
     public height: number;
     public age:number;
+    public birthday: string='';
+    public image: string;
 }

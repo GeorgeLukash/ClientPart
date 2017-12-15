@@ -12,13 +12,38 @@ export class UserComponent implements OnInit {
 
   private profile: Profile;
   private image: Image = new Image();
+  private img_df: string;
+
+  private css_class1: string;
+  private css_class2: string;
 
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
     this.apiService.get('user/profile').subscribe((response) => {
       this.profile = response.json();
+      
+      if (this.profile.image === null) {
+        this.css_class2 = 'cust-hide';
+        if (this.profile.sex === 0) {
+          this.img_df = 'http://localhost:57848/Uploads/Images/user_profile_female.jpg';
+          this.css_class1 = 'cust-show';
+        } else if (this.profile.sex === 1) {
+          this.img_df = 'http://localhost:57848/Uploads/Images/user_profile_male.jpg';
+          this.css_class1 = 'cust-show';
+        }
+      } else {
+        this.css_class1 = 'cust-hide';
+        this.css_class2 = 'cust-show';
+      }
     });
+
+
+  }
+
+  change_image() {
+    this.apiService.post('user/profile/image', JSON.stringify(this.image)).subscribe();
+    location.reload();
   }
 
   changeListener($event): void {

@@ -6,20 +6,30 @@
         </span>
         <hr>
     </div>
-    <div class="{{css_class1}}">Here will be your settings for plan</div>
+    <div class="{{css_class1}}">Click Add new.</div>
     <div class="{{css_class2}}">
         <div class="exercises-block">
-            <span>Виберіть вид спорту</span>
-            <div class="row blocks">
-                <div class="sport-block" id="sport1" (click)="clicked($event)">Sport1</div>
-                <div class="sport-block" id="sport2" (click)="clicked($event)">Sport2</div>
-                <div class="sport-block" id="sport3" (click)="clicked($event)">Sport3</div>
-                <div class="sport-block" id="sport4" (click)="clicked($event)">Sport4</div>
-                <div class="sport-block" id="sport5" (click)="clicked($event)">Sport5</div>
-            </div>
+            <span>Виберіть вид спорту</span>           
+            <fieldset>				
+				<!-- Radio one -->
+				<input type='radio' id='radio1-1' (click)="clickedSport('Sport1')" name='radio'>
+				<label for='radio1-1'>Sport1</label>
+				<!-- Radio two -->
+				<input type='radio' id='radio1-2' (click)="clickedSport('Sport2')" name='radio'>
+				<label for='radio1-2'>Sport2</label>
+				<!-- Radio three -->
+				<input type='radio' id='radio1-3' (click)="clickedSport('Sport3')" name='radio'>
+                <label for='radio1-3'>Sport3</label>
+                <!-- Radio four -->
+				<input type='radio' id='radio1-4' (click)="clickedSport('Sport4')" name='radio'>
+                <label for='radio1-4'>Sport4</label>
+                <!-- Radio five -->
+				<input type='radio' id='radio1-5' (click)="clickedSport('Sport5')" name='radio'>
+				<label for='radio1-5'>Sport5</label>
+			</fieldset>
         </div>
         <div class="settings-block row">
-            <div class="description-block">
+            <div class="description-block content-hide">
                 <div class="head-block">
                     <span id="block_name_head">НАЗВА БЛОКУ</span>
                 </div>
@@ -44,9 +54,13 @@
                     </div>
                 </div>
             </div>
-            <div class="add-new-block">
-                ДОДАТИ БЛОК
+            <div class="add-new-block" (click)="addBlock()">
+                ADD BLOCK 
             </div>
         </div>
-    </div>
+        <div class="cust-btn-holder">
+            <button class="btn btn-success" (click)="addNewPlan()">CONFIRM</button>
+            <button class="btn btn-danger">CANCEL</button>
+        </div>
+    </div>    
 </div>

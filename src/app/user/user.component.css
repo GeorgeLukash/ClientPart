@@ -69,6 +69,10 @@
     padding: 0 0 0 150px;
   }
   */
+  .main{
+    height: 100vh;
+    background:rgba(255,255,255,0);
+  }
   a.nostyle{
     color:inherit;
     text-decoration:none;
@@ -78,66 +82,53 @@
   div.portfoliocard{
     position:relative;
     width:100%;
+    height: 100vh;
     background:rgba(255,255,255,0);
     border:1px solid rgba(0,0,0,0.7);
     box-shadow:0px -1px 3px rgba(0,0,0,0.1),
           0px 2px 6px rgba(0,0,0,0.5);
     border-radius:6px;
-    margin:50px auto;
+    margin:0 auto;
     overflow:hidden;
     z-index:100;
   }
   div.portfoliocard div.coverphoto{
+    color:rgba(255,255,255,0.8);
+    font-size: 90px!important;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
     width:100%;
-    height:120px;        
-    border-top-right-radius:5px;
-    border-top-left-radius:5px;
-    border-bottom:1px solid rgba(0,0,0,0.1);
+    height:120px;            
     box-shadow:inset 0px 3px 20px rgba(255,255,255,0.3),
           1px 0px 2px rgba(255,255,255,0.7);
     z-index:99;
-  }
-  div.portfoliocard div.left_col, div.portfoliocard div.right_col{
-    float:left;
-    height:340px;
-  }
+  }  
   div.portfoliocard div.left_col{
     width:40%;
     padding-top:85px;
     box-sizing:border-box;
   }
-  div.portfoliocard div.right_col{
-    width:60%;
-      box-shadow:inset 0px 1px 1px rgba(255,255,255,0.7);
-    margin-left:-1px;
+  .right_col{
+    float:right;
+    margin: -150px 250px 0 50px;    
+  }
+  div.portfoliocard div.right_col{    
+    position: relative;
+      box-shadow:inset 0px 1px 1px rgba(255,255,255,0.7);    
     border-bottom-right-radius:5px;
   }
   div.portfoliocard div.profile_picture{
     width:110px;
     height:110px;
     background:rgba(255,255,255,0);
-    position:absolute;
-    top:65px;
-    left:40px;
-    border-radius:100%;
-    background-image: url('http://cache.spreadshirt.net/Public/Common/images/profile-pic-placeholder_130x130.png');
-    background-size:100% 100%;
-    padding:7px;
-    border:4px solid rgba(255,255,255,1)
+    position:relative;   
+    padding: 5px 0 5px 15px; 
   }
-  div.portfoliocard div.right_col h2.name{
-    font-size:30px;
-    font-weight:300;
-    color: rgba(255,255,255,0.7);
-    padding:0;
-    margin:20px 10px 0px 30px;
-  }
-  div.portfoliocard div.right_col h3.location{
-    font-size:15px;
-    font-weight:300;
-    color:rgba(170,170,170,1);
-    padding:0;
-    margin:-5px 10px 10px 30px;
+  div.profile_picture img{
+    height: 350px;
+    width: 350px;
+    border-radius: 50px; 
+    padding-bottom: 10px;
   }
   div.portfoliocard ul.contact_information{
     margin-top:20px;
@@ -145,17 +136,17 @@
     list-style-type:none;
   }
   div.portfoliocard ul.contact_information li{
-    height:25px;
-    width:180px;
+    height:auto;
+    width:auto;
     line-height:25px;
     font-weight:300;
-    font-size:15px;
+    font-size:40px;
     color:rgba(140,140,140,1);
     text-shadow:1px 1px 1px rgba(255,255,255,0.8);
-    padding:5px 0px;
+    padding:15px 0px;
+    margin: 10px 0;
     background-repeat:no-repeat;
-    background-size:18px 18px;
-    border-bottom:1px solid rgba(0,0,0,0.1);
+    background-size:18px 18px;   
     box-shadow:0px 1px 1px rgba(255,255,255,0.6);
     cursor:default;
   }
@@ -200,4 +191,25 @@
     font-size:25px;
     color:rgba(140,140,140,1);
   }
-  
+  .btn-holder{
+    width:350px;
+    border: 1px solid rgba(255,255,255,1);
+    border-radius: 5px;
+    text-align: center;
+    background-color: rgba(255,255,255,0.8);
+  }
+  .btn-holder input{
+    width:350px;
+   /* padding: 0 0 0 115px;*/
+    text-align: center;
+    border:0px solid;
+  }
+  .btn-holder button{
+    width:348px;
+  }
+  .cust-show{
+    display: block;
+  }
+  .cust-hide{
+    display: none;
+  }
