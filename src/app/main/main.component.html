@@ -5,7 +5,7 @@
             <span class="cust-header_span">guerriero</span>
         </div>
         <div class="wrapper-he">
-            <div class="user-info" (click)="goTo('user')">
+            <div class="user-info" [routerLink]="['user']">
                 <img class="user-phot {{css_class1}}" src="{{img_df}}" alt="User photo must be here">
                 <img class="user-phot {{css_class2}}" src="{{image}}" alt="User photo must be here">
                 <span>{{this.firstname}} {{this.lastname}}</span>
@@ -22,23 +22,23 @@
             <h5>YOUR</h5>
             <li class="row">
                 <img src="assets/img/icon/plans.png">
-                <a href="/main/plans">My Plans</a>
+                <a [routerLink]="['plans']">My Plans</a>
             </li>
-            <li class="row">
+           <!-- <li class="row">
                 <img src="assets/img/icon/calories.png">
-                <a href="/#">Calories eat</a>
-            </li>
+                <a [routerLink]="['blocks']">Calories eat</a>
+            </li>-->
             <li class="row">
                 <img src="assets/img/icon/location.png">
-                <a href="/main/news">News</a>
+                <a [routerLink]="['news']">News</a>
             </li>
             <li class="row">
                 <img src="assets/img/icon/run.png">
-                <a href="/main/exercises">My progress</a>
+                <a [routerLink]="['exercises']">My progress</a>
             </li>
             <!--<li class="row">
                 <img src="assets/img/icon/bodyb.png">
-                <a href="/main/blocks">Bodybuilding</a>
+                <a [routerLink]="['blocks']">Bodybuilding</a>
             </li>-->
         </ul>
     </div>

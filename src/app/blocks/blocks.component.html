@@ -1,66 +1,66 @@
 <div class="container">
     <div class="line-block">
-        <span id="plan-name" *ngFor="let c of blocks">{{c.planName}}</span>
-        <span id="add-new" (click)="addPlan($event)">
+        <span id="plan-name" *ngFor="let c of planName" >{{c.name}}</span>
+        <!--<span id="add-new" (click)="addPlan($event)">
             <a>Add new</a>
-        </span>
+        </span>-->
         <hr>
     </div>
-    <div class="{{css_class1}}">Click Add new.</div>
-    <div class="{{css_class2}}">
+
+    <div>
         <div class="exercises-block">
-            <span>Виберіть вид спорту</span>           
-            <fieldset>				
-				<!-- Radio one -->
-				<input type='radio' id='radio1-1' (click)="clickedSport('Sport1')" name='radio'>
-				<label for='radio1-1'>Sport1</label>
-				<!-- Radio two -->
-				<input type='radio' id='radio1-2' (click)="clickedSport('Sport2')" name='radio'>
-				<label for='radio1-2'>Sport2</label>
-				<!-- Radio three -->
-				<input type='radio' id='radio1-3' (click)="clickedSport('Sport3')" name='radio'>
-                <label for='radio1-3'>Sport3</label>
+            <span>Виберіть вид спорту</span>
+            <fieldset>
+                <!-- Radio one -->
+                <input type='radio' id='radio1-1' (click)="clickedSport('RUN')" name='radio'>
+                <label for='radio1-1'>POWERLIFTING</label>
+                <!-- Radio two -->
+                <input type='radio' id='radio1-2' (click)="clickedSport('BODUBUILDING')" name='radio'>
+                <label for='radio1-2'>BODYBUILDING</label>
+                <!-- Radio three -->
+                <input type='radio' id='radio1-3' (click)="clickedSport('SWIMMING')" name='radio'>
+                <label for='radio1-3'>CARDIO</label>
                 <!-- Radio four -->
-				<input type='radio' id='radio1-4' (click)="clickedSport('Sport4')" name='radio'>
-                <label for='radio1-4'>Sport4</label>
+                <input type='radio' id='radio1-4' (click)="clickedSport('Sport4')" name='radio'>
+                <label for='radio1-4'>CUSTOM EXERCISES</label>
                 <!-- Radio five -->
-				<input type='radio' id='radio1-5' (click)="clickedSport('Sport5')" name='radio'>
-				<label for='radio1-5'>Sport5</label>
-			</fieldset>
+                <input type='radio' id='radio1-5' (click)="clickedSport('Sport5')" name='radio'>
+                <label for='radio1-5'>FITNESS</label>
+            </fieldset>
         </div>
         <div class="settings-block row">
-            <div class="description-block content-hide">
-                <div class="head-block">
-                    <span id="block_name_head">НАЗВА БЛОКУ</span>
+            <div class="description-block">
+                <div class="head-block" (click)="changeName()">
+                    <span id="block_name_head">{{blockName}}</span>
                 </div>
                 <div class="set-cont-block row">
-                    <div class="settings">
-                        <h6>Назва вправи</h6>
+                    <div class="settings" (click)="changeExerciseName()">
+                        <h6>{{exerciseName}}</h6>
                         <input id="inpt11" type="text" placeholder="156kg">
                         <input id="inpt21" type="text" placeholder="156kg">
                         <input id="inpt31" type="text" placeholder="156kg">
                     </div>
-                    <div class="settings">
-                        <h6>Назва вправи</h6>
+                    <div class="settings" (click)="changeExerciseName1()">
+                        <h6>{{exerciseName1}}</h6>
                         <input id="inpt12" type="text" placeholder="156kg">
                         <input id="inpt22" type="text" placeholder="156kg">
                         <input id="inpt32" type="text" placeholder="156kg">
                     </div>
-                    <div class="settings">
-                        <h6>Назва вправи</h6>
+                    <div class="settings" (click)="changeExerciseName2()">
+                        <h6>{{exerciseName2}}</h6>
                         <input id="inpt13" type="text" placeholder="156kg">
                         <input id="inpt23" type="text" placeholder="156kg">
                         <input id="inpt33" type="text" placeholder="156kg">
                     </div>
                 </div>
             </div>
-            <div class="add-new-block" (click)="addBlock()">
+            <!--<div class="add-new-block" (click)="addBlock()">
                 ADD BLOCK 
-            </div>
+            </div>-->
         </div>
         <div class="cust-btn-holder">
             <button class="btn btn-success" (click)="addNewPlan()">CONFIRM</button>
             <button class="btn btn-danger">CANCEL</button>
         </div>
-    </div>    
+    </div>
 </div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Plan } from '../model/plan.component.model';
 import { ApiService } from '../services/api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-plan',
@@ -9,18 +10,27 @@ import { ApiService } from '../services/api.service';
 })
 export class PlanComponent implements OnInit {
 
-  private plan: Plan[];
+  private plans: Plan[];
+  private plan: Plan = new Plan(0,"noname",0);
 
-  constructor(private apiService: ApiService) { }
+  constructor(private router: Router,private apiService: ApiService) { }
 
   ngOnInit() {
     this.apiService.get('user/plans').subscribe((response) => {
-      this.plan = response.json();
+      this.plans = response.json();    
     });
   }
 
   addPlan()
   {
-    alert('Still in developing')
+    this.plan.name = prompt("Enter plan name","MyPlan");
+    this.plan.duration = 0;
+    localStorage.setItem("user",JSON.stringify(this.plan));
+    this.apiService.post('user/plan',this.plan).subscribe((respons) =>{});
+    location.reload();
+  }
+  redirect(){
+
+    this.router.navigate(['./main/blocks']);
   }
 }

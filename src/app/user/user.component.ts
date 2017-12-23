@@ -26,10 +26,10 @@ export class UserComponent implements OnInit {
       if (this.profile.image === null) {
         this.css_class2 = 'cust-hide';
         if (this.profile.sex === 0) {
-          this.img_df = 'http://localhost:57848/Uploads/Images/user_profile_female.jpg';
+          this.img_df = 'assets/img/users/user_profile_female.jpg';
           this.css_class1 = 'cust-show';
         } else if (this.profile.sex === 1) {
-          this.img_df = 'http://localhost:57848/Uploads/Images/user_profile_male.jpg';
+          this.img_df = 'assets/img/users/user_profile_male.jpg';
           this.css_class1 = 'cust-show';
         }
       } else {

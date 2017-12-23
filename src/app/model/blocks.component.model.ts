@@ -1,7 +1,12 @@
 export class BlockModel {
     public planName: String = '';
-    public exerciseType: String = '';
-    public exercise: ExerciseMolde = new ExerciseMolde();
+    public kindOfSport: any;
+    public type: any;
+    public time: number;
+    public distance: number;
+    public weight: number;
+    public amount: number;
+    public blockId: number;
 };
 
 class ExerciseMolde {

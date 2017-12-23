@@ -199,4 +199,5 @@
   }
   .cust-hide{
     display: none;
+    position:absolute;
   }
