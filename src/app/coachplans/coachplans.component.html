@@ -1,0 +1,25 @@
+<div id="main">
+    <div *ngFor="let c of news" class="block-content" id="b0" style="display: block;">
+        <div class="head-news">
+            <button class="settings" title="Delete from DOM" id="0">
+               <!-- <img src="css/img/settings.png">-->
+            </button>
+            <h1 class="title-text">{{c.title}}</h1>
+            <span class="create-data">
+                {{c.publishedAt}}
+            </span>
+        </div>
+        <div class="content-holder">
+                <a href='{{c.url}}' target="_blank">
+            <img src="{{c.urlToImage}}" width="300" height="300">
+        </a>
+            <p class="description">
+                {{c.description}}
+            </p>
+        </div>
+        <!--<ul class="tags-list">
+            <li>Business</li>
+        </ul>-->
+    </div>
+
+</div>

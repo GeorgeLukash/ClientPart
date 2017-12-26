@@ -1,6 +1,6 @@
 <div class="container">
     <div class="line-block">
-        <span id="plan-name" *ngFor="let c of planName" >{{c.name}}</span>
+        <span id="plan-name" >{{planName}}</span>
         <!--<span id="add-new" (click)="addPlan($event)">
             <a>Add new</a>
         </span>-->
@@ -9,23 +9,23 @@
 
     <div>
         <div class="exercises-block">
-            <span>Виберіть вид спорту</span>
+            <span>Choose a sport</span>
             <fieldset>
                 <!-- Radio one -->
                 <input type='radio' id='radio1-1' (click)="clickedSport('RUN')" name='radio'>
-                <label for='radio1-1'>POWERLIFTING</label>
+                <label for='radio1-1'><img src="assets/img/icon/powerlifting.png"><br/>POWERLIFTING</label>
                 <!-- Radio two -->
                 <input type='radio' id='radio1-2' (click)="clickedSport('BODUBUILDING')" name='radio'>
-                <label for='radio1-2'>BODYBUILDING</label>
+                <label for='radio1-2'><img src="assets/img/icon/bodybuilding.png"><br/>BODYBUILDING</label>
                 <!-- Radio three -->
                 <input type='radio' id='radio1-3' (click)="clickedSport('SWIMMING')" name='radio'>
-                <label for='radio1-3'>CARDIO</label>
+                <label for='radio1-3'><img src="assets/img/icon/powerlifting.png"><br/>CARDIO</label>
                 <!-- Radio four -->
                 <input type='radio' id='radio1-4' (click)="clickedSport('Sport4')" name='radio'>
-                <label for='radio1-4'>CUSTOM EXERCISES</label>
+                <label for='radio1-4'><img src="assets/img/icon/powerlifting.png"><br/>CUSTOM EXERCISES</label>
                 <!-- Radio five -->
                 <input type='radio' id='radio1-5' (click)="clickedSport('Sport5')" name='radio'>
-                <label for='radio1-5'>FITNESS</label>
+                <label for='radio1-5'><img src="assets/img/icon/powerlifting.png"><br/>FITNESS</label>
             </fieldset>
         </div>
         <div class="settings-block row">

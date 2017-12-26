@@ -10,4 +10,5 @@ export class RegisterUser
     public age:number;
     public birthday: string='';
     public image: string;
+    public role: string;
 }

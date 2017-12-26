@@ -13,10 +13,13 @@
 }
 
 .line-block span {
-    font-size: 32px;
-    color: rgba(255, 255, 255, 0.3);
+    font-size: 42px;
+    color: rgba(255, 255, 255, 0.5);
     font-family: Arial, Helvetica, sans-serif;
     padding: 0 50px 0 0;
+    -moz-text-shadow:0 0 10px #fff; 
+    -webkit-text-shadow:0 0 10px #fff; 
+    text-shadow:0 0 10px #fff;
 }
 
 .line-block hr {
@@ -189,7 +192,7 @@ input[type='radio'] + label{
 	}
 fieldset{	
 	min-height: 90px;
-    line-height: 90px;    
+    line-height: 45px;    
     margin: 20px 0 20px 0;	
 	margin-right: 20px;	
 }
@@ -266,4 +269,9 @@ input[type='radio'] + label:after{
 	left: (-110px /2)/2.2;
 	width:110px/2.2;
 	height:110px/2.2;
+}
+label img{
+    height: 40px;
+    width:42px;
+    margin: 11px 2px 0 0;
 }

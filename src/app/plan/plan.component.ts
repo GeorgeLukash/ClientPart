@@ -11,26 +11,32 @@ import { Router } from '@angular/router';
 export class PlanComponent implements OnInit {
 
   private plans: Plan[];
-  private plan: Plan = new Plan(0,"noname",0);
+  private plan: Plan = new Plan(0, "noname", 0);
 
-  constructor(private router: Router,private apiService: ApiService) { }
+  private show: Boolean = false;
+
+  constructor(private router: Router, private apiService: ApiService) { }
 
   ngOnInit() {
     this.apiService.get('user/plans').subscribe((response) => {
-      this.plans = response.json();    
+      this.plans = response.json();
+      console.log(this.plans);
     });
   }
 
-  addPlan()
-  {
-    this.plan.name = prompt("Enter plan name","MyPlan");
+  addPlan() {
+    this.plan.name = prompt("Enter plan name", "MyPlan");
     this.plan.duration = 0;
-    localStorage.setItem("user",JSON.stringify(this.plan));
-    this.apiService.post('user/plan',this.plan).subscribe((respons) =>{});
+    localStorage.setItem("user", JSON.stringify(this.plan));
+    this.apiService.post('user/plan', this.plan).subscribe((respons) => { });
     location.reload();
   }
-  redirect(){
 
+  displayMenu(event) {
+    event.target.classList.add('show'); 
+    //this.show = !this.show;
+  }
+  redirect() {
     this.router.navigate(['./main/blocks']);
   }
 }

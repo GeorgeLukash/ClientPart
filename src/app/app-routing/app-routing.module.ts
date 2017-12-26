@@ -13,6 +13,12 @@ import { UserComponent } from '../user/user.component';
 import { ProfileComponent } from '../profile/profile.component';
 import { NewsComponent } from '../news/news.component';
 
+import { CoachComponent } from '../coach/coach.component';
+import { CoachplansComponent } from '../coachplans/coachplans.component';
+import { AdminComponent } from '../admin/admin.component';
+import { PlansdetailsComponent } from '../plansdetails/plansdetails.component';
+import { AccessGuard } from '../access.guard';
+
 export const router: Routes = [
     {
         path: '',
@@ -37,14 +43,14 @@ export const router: Routes = [
         component: MainComponent,
         children: [{
             path: 'user',
-            component: UserComponent
+            component: UserComponent            
         },
         {
             path: 'plans',
             component: PlanComponent
         },
         {
-            path: 'blocks',
+            path: 'blocks/:id',
             component: BlocksComponent
         },
         {
@@ -58,6 +64,23 @@ export const router: Routes = [
         {
             path: 'news',
             component: NewsComponent
+        },
+        {
+            path: 'admin',
+            component: AdminComponent,
+            canActivate: [AccessGuard]
+        },
+        {
+            path: 'coach',
+            component: CoachComponent
+        },
+        {
+            path: 'coachplans',
+            component: CoachplansComponent
+        },
+        {
+            path: 'plansdetails',
+            component: PlansdetailsComponent
         }
         ]
     }

@@ -15,15 +15,28 @@ import { PlanComponent } from './plan/plan.component';
 import { BlocksComponent } from './blocks/blocks.component';
 import { ExercisesComponent } from './exercises/exercises.component';
 import { UserComponent } from './user/user.component';
+
 import { ApiService } from './services/api.service';
+import { AuthService } from './services/auth.service';
+
 import { NewsComponent } from './news/news.component';
 import { ProfileComponent } from './profile/profile.component';
+
+import { CoachComponent } from './coach/coach.component';
+import { CoachplansComponent } from './coachplans/coachplans.component';
+import { AdminComponent } from './admin/admin.component';
+import { PlansdetailsComponent } from './plansdetails/plansdetails.component';
+
+import { AccessGuard }   from './access.guard';
 
 @NgModule({
   declarations: [
     AppComponent,
+    AdminComponent,
     LoginComponent,
     RegistrationComponent,
+    CoachComponent,
+    CoachplansComponent,
     ForgotpassComponent,
     MainComponent,
     PlanComponent,
@@ -31,7 +44,8 @@ import { ProfileComponent } from './profile/profile.component';
     ExercisesComponent,
     UserComponent,
     ProfileComponent,
-    NewsComponent
+    NewsComponent,
+    PlansdetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -40,9 +54,9 @@ import { ProfileComponent } from './profile/profile.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    routes
+    routes    
   ],
-  providers: [ApiService],
+  providers: [ApiService, AccessGuard, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
