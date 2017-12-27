@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { News } from '../model/news.component.model';
 import { ApiService } from '../services/api.service';
+import { CoachPlan } from '../model/coachplan.component.mode';
 
 @Component({
   selector: 'app-coachplans',
@@ -9,13 +10,13 @@ import { ApiService } from '../services/api.service';
 })
 
 export class CoachplansComponent implements OnInit {
-  private news: News[] = [];
+  private plans: CoachPlan[] = [];
 
   constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
-    this.apiService.get('news/get_all').subscribe((response) => {
-      this.news = response.json();
+    this.apiService.get('user/recommends?query=').subscribe((response) => {
+      this.plans = response.json();
     });
   }
 }

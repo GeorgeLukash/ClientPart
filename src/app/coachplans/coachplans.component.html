@@ -1,29 +1,25 @@
-
 <div id="main">
-<div class="block-content" id="b0" style="display: block;">
-    <div class="head-news">
-        <button class="settings" title="Delete from DOM" id="0">
-           <!-- <img src="css/img/settings.png">-->
-        </button>
-        <h1 class="title-text">Plan Name</h1>
-        <span class="create-data">
-            27 december 2017
-        </span>
+    <div *ngFor="let c of plans" class="block-content" id="b0" style="display: block;">
+        <div class="head-news">
+            <button class="settings" title="Delete from DOM" id="0">
+                <!-- <img src="css/img/settings.png">-->
+            </button>
+            <h1 class="title-text">{{c.name}}</h1>
+            <!--<span class="create-data">
+                27 december 2017
+            </span>-->
+        </div>
+        <div class="content-holder">
+            <img src="assets/img/icon/plans.png" width="300" height="300">
+            <p class="description">
+                {{c.description}}
+            </p>
+        </div>
+        <div class="btn-holder">
+            <button type="submit" class="btn btn-success" id="btn-view" [routerLink]="['../plansdetails']">VIEW DETAILS</button>
+            <button type="submit" class="btn btn-success" id="btn-follow">FOLLOW</button>
+        </div>
     </div>
-    <div class="content-holder">               
-        <img src="assets/img/icon/plans.png" width="300" height="300">    
-        <p class="description">
-            SometextSometextSometextSometextSometextSometextSometext
-            SometextSometextSometextSometextSometextSometextSometext
-            SometextSometextSometextSometextSometextSometextSometext
-            SometextSometextSometextSometextSometextSometextSometext                
-        </p>
-    </div>
-    <div class="btn-holder">
-        <button type="submit" class="btn btn-success" id="btn-view" [routerLink]="['../plansdetails']">VIEW DETAILS</button>
-        <button type="submit" class="btn btn-success" id="btn-follow">FOLLOW</button>
-    </div>
-</div>
 
 
 </div>

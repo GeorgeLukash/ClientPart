@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class PlanComponent implements OnInit {
 
   private plans: Plan[];
-  private plan: Plan = new Plan(0, "noname", 0);
+  private plan: Plan = new Plan();
 
   private show: Boolean = false;
 
@@ -24,12 +24,20 @@ export class PlanComponent implements OnInit {
     });
   }
 
+  clickedSport(exerciseType) {
+    this.plan.Type = exerciseType;
+  }
   addPlan() {
-    this.plan.name = prompt("Enter plan name", "MyPlan");
-    this.plan.duration = 0;
-    localStorage.setItem("user", JSON.stringify(this.plan));
-    this.apiService.post('user/plan', this.plan).subscribe((respons) => { });
-    location.reload();
+    this.plan.Name = prompt("Enter plan name", "MyPlan");
+    this.plan.Description = prompt('Enter description', 'Description');
+    if (this.plan.Type === undefined) {
+      alert('Choose your type of sport');
+    } else {
+      this.apiService.post('user/plan', this.plan).subscribe((respons) => { });
+      location.reload();
+    }
+    // localStorage.setItem("user", JSON.stringify(this.plan));
+    //this.apiService.post('user/plan', this.plan).subscribe((respons) => { });    
   }
   redirect() {
     this.router.navigate(['./main/blocks']);

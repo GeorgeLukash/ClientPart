@@ -1,11 +1,6 @@
 export class Plan {
-    public id: number;
-    public name: string;
-    public duration: number;
-
-    constructor(public _id: number, public _name: string, public _duration: number) {
-        this.id = _id;
-        this.name = _name;
-        this.duration = _duration;
-    }
+    public Id: number;
+    public Name: string;
+    public Description: string;
+    public Type: string;
 }
