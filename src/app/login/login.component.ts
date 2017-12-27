@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { Http, RequestOptionsArgs, Headers } from '@angular/http';
 import { RequestOptions } from '@angular/http/src/base_request_options';
+import { ApiService } from '../services/api.service';
 
 @Component({
     selector: 'app-login',
@@ -15,7 +16,7 @@ export class LoginComponent implements OnInit {
     showError: boolean;
     images: any;
 
-    constructor(private router: Router, private _httpService: Http) { }
+    constructor(private router: Router, private _httpService: Http, private apiService: ApiService) { }
 
     ngOnInit() {
         this.showError = false;
@@ -42,8 +43,13 @@ export class LoginComponent implements OnInit {
         this._httpService.post('http://localhost:57848/token', body.toString(), opts).subscribe(
             (response) => {
                 localStorage.setItem('token', response.json().access_token);
-                localStorage.setItem('user_type', response.json().user_type);
-                this.router.navigate(['main/news']);                
+                this.apiService.get('auth/get_me').subscribe((response) => {
+                    debugger;
+                    localStorage.setItem('user_type', response.json().role);
+                    localStorage.setItem('user_id', response.json().id);
+                })
+
+                this.router.navigate(['main/news']);
             });
     }
 }

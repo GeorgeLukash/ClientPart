@@ -27,7 +27,7 @@ export class MainComponent implements OnInit {
   ngOnInit() {
     this.apiService.get('user/profile').subscribe((response) => {
       this.user = response.json();
-      console.log(this.user);
+      console.log(this.user);      
       this.firstname = response.json().firstname;
       this.lastname = response.json().lastname;
       this.image = response.json().image;

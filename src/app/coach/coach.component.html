@@ -1,0 +1,30 @@
+<div class="main">
+    <div class="portfoliocard">
+            <div class="coverphoto"><span class="name">{{profile.firstname}} {{profile.lastname}}</span></div>
+            <div class="profile_picture">
+                    <img class="user-phot {{css_class1}}" src="{{img_df}}" alt="User photo must be here">                      
+                    <img class="user-phot {{css_class2}}" src="{{profile.image}}" alt="User photo must be here">                      
+                    <div class="btn-holder">
+                        <input type="file" value="Upload photo" accept="image/*" (change)='changeListener($event)'>
+                        <button class="btn btn-success" type="Submit" value="Submit" (click)="change_image()">Submit</button>
+                    </div>
+            </div>
+            <div class="left_col">
+                <div class="followers">
+                    <div class="follow_count"></div>                    
+                </div>
+                <div class="following">
+                    <div class="follow_count"></div>                    
+                </div>
+            </div>
+            <div class="right_col">                                
+                <ul class="contact_information">
+                    <li class="work">Age: {{profile.age}}</li>
+                    <li class="website">Weight: {{profile.weight}}</li>
+                    <li class="mail">Email: {{profile.email}}</li>
+                    <li class="phone">Height: {{profile.height}}</li>                    
+                    <li class="phone">Birthday: {{profile.birthday}}</li>  
+                </ul>
+            </div>
+            </div>
+</div>

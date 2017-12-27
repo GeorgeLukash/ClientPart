@@ -5,6 +5,12 @@
             <span class="cust-header_span">guerriero</span>
         </div>
         <div class="wrapper-he">
+                <div class="user-info" [routerLink]="['coach']">
+                        <img class="user-phot {{css_class1}}" src="{{img_df}}" alt="User photo must be here">
+                        <img class="user-phot {{css_class2}}" src="{{image}}" alt="User photo must be here">
+                        <span>{{this.firstname}} {{this.lastname}}</span>
+                    </div>
+
             <div class="user-info" [routerLink]="['user']">
                 <img class="user-phot {{css_class1}}" src="{{img_df}}" alt="User photo must be here">
                 <img class="user-phot {{css_class2}}" src="{{image}}" alt="User photo must be here">

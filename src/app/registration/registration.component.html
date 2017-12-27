@@ -9,7 +9,7 @@
                 <span class="slider round"></span>                
               </label>
                 <span class="nnn">Жінка</span>
-            </div>
+            </div>            
             <div class="main-inpt">
                 <input type="email" autocomplete="new-email" placeholder="Адреса електронної пошти:" id="email" [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required #emailInput="ngModel">
                 <div class="show-error" *ngIf="emailInput.errors && emailInput.errors.required && emailInput.dirty">
@@ -71,6 +71,14 @@
                 <p>
                     Натискаючи Зареєструватися або Продовжити я приймаю наступне: Умови надання послуг, Умови обробки платежів, Політика конфіденційності
                 </p>
+            </div>
+            <div class="user-role">
+                <!-- Radio one -->
+                <input type='radio' id='radio1-1' (click)="userRole('User')" name='radio'>
+                <label for='radio1-1'>SIMPLE USER</label>
+                <!-- Radio two -->
+                <input type='radio' id='radio1-2' (click)="userRole('Coach')" name='radio'>
+                <label for='radio1-2'>COACH</label>
             </div>
 
             <button type="button" id="sign-btn" (click)="signUp()">Зареєструватися</button>

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, ActivatedRoute } from "@angular/router";
-import { AuthService } from './services/auth.service';
+import { AuthService } from '../services/auth.service';
 import { Observable } from "rxjs/Rx";
 import { Subscription } from "rxjs/Subscription";
 
@@ -10,8 +10,6 @@ export class AccessGuard implements CanActivate {
   constructor(private authService: AuthService) { }
 
   canActivate(){    
-    //return this.authService.isAdmin();
-    return true;
-    //return confirm('Вы уверены, что хотите перейти?');    
+    return this.authService.isAdmin();       
   }
 }

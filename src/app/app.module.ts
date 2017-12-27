@@ -27,7 +27,8 @@ import { CoachplansComponent } from './coachplans/coachplans.component';
 import { AdminComponent } from './admin/admin.component';
 import { PlansdetailsComponent } from './plansdetails/plansdetails.component';
 
-import { AccessGuard }   from './access.guard';
+import { AccessGuard } from './guards/access.guard';
+import { CoachGuard } from './guards/coach.guard';
 
 @NgModule({
   declarations: [
@@ -54,9 +55,9 @@ import { AccessGuard }   from './access.guard';
     BrowserModule,
     FormsModule,
     HttpModule,
-    routes    
+    routes
   ],
-  providers: [ApiService, AccessGuard, AuthService],
+  providers: [ApiService, AccessGuard, CoachGuard, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

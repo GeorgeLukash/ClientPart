@@ -17,7 +17,8 @@ import { CoachComponent } from '../coach/coach.component';
 import { CoachplansComponent } from '../coachplans/coachplans.component';
 import { AdminComponent } from '../admin/admin.component';
 import { PlansdetailsComponent } from '../plansdetails/plansdetails.component';
-import { AccessGuard } from '../access.guard';
+import { AccessGuard } from '../guards/access.guard';
+import { CoachGuard } from '../guards/coach.guard';
 
 export const router: Routes = [
     {
@@ -72,7 +73,8 @@ export const router: Routes = [
         },
         {
             path: 'coach',
-            component: CoachComponent
+            component: CoachComponent,
+            canActivate:[CoachGuard]
         },
         {
             path: 'coachplans',
