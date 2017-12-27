@@ -1,25 +1,27 @@
-<div id="main">
-    <div *ngFor="let c of news" class="block-content" id="b0" style="display: block;">
-        <div class="head-news">
-            <button class="settings" title="Delete from DOM" id="0">
-               <!-- <img src="css/img/settings.png">-->
-            </button>
-            <h1 class="title-text">{{c.title}}</h1>
-            <span class="create-data">
-                {{c.publishedAt}}
-            </span>
-        </div>
-        <div class="content-holder">
-                <a href='{{c.url}}' target="_blank">
-            <img src="{{c.urlToImage}}" width="300" height="300">
-        </a>
-            <p class="description">
-                {{c.description}}
-            </p>
-        </div>
-        <!--<ul class="tags-list">
-            <li>Business</li>
-        </ul>-->
-    </div>
 
+<div id="main">
+<div class="block-content" id="b0" style="display: block;">
+    <div class="head-news">
+        <button class="settings" title="Delete from DOM" id="0">
+           <!-- <img src="css/img/settings.png">-->
+        </button>
+        <h1 class="title-text">Plan Name</h1>
+        <span class="create-data">
+            27 december 2017
+        </span>
+    </div>
+    <div class="content-holder">               
+        <img src="assets/img/icon/plans.png" width="300" height="300">    
+        <p class="description">
+            SometextSometextSometextSometextSometextSometextSometext
+            SometextSometextSometextSometextSometextSometextSometext
+            SometextSometextSometextSometextSometextSometextSometext
+            SometextSometextSometextSometextSometextSometextSometext                
+        </p>
+    </div>
+    <div class="btn-holder">
+        <button type="submit" class="btn btn-success" id="btn-view">VIEW DETAILS</button>
+        <button type="submit" class="btn btn-success" id="btn-follow">FOLLOW</button>
+    </div>
+</div>
 </div>

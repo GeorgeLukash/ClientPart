@@ -6,7 +6,7 @@ ul {
 
 #main {
     max-width: 800px;
-    height: 90vh;
+    height: 110vh;
     margin: 10px auto;
     padding: 10px 0 25px 0;
     overflow: auto;
@@ -14,6 +14,7 @@ ul {
 
 .head-news {
     position: relative;
+    border-radius: 15px 15px 0 0;
     background-color: #82ca9c;
     height: auto;
     width: 100%;
@@ -32,6 +33,7 @@ ul {
 }
 
 .block-content {
+    border-radius: 15px;
     max-width: 700px;
     height: auto;
     background-color: #3d3d3d;
@@ -111,4 +113,9 @@ ul {
     width: 25px;
     height: 25px;
     margin-left: -5px;
+}
+.btn-holder{
+    width:100%;
+    text-align: center;
+    padding-bottom: 10px;
 }
