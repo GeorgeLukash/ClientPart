@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from '../services/api.service';
+import { AuthService } from '../services/auth.service';
 
 import { RegisterUser } from '../model/register-user.component.model';
 
@@ -20,14 +21,18 @@ export class MainComponent implements OnInit {
   private css_class1: string;
   private css_class2: string;
 
+  private isCoach: boolean = false;
+  private isUser: boolean = false;
+
   private user: RegisterUser = new RegisterUser();
 
-  constructor(public router: Router, private apiService: ApiService) { }
+  constructor(private authService: AuthService,public router: Router, private apiService: ApiService) { }
 
   ngOnInit() {
+    this.isCoach = this.authService.isCoach()
     this.apiService.get('user/profile').subscribe((response) => {
       this.user = response.json();
-      console.log(this.user);      
+      console.log(this.user.role);      
       this.firstname = response.json().firstname;
       this.lastname = response.json().lastname;
       this.image = response.json().image;

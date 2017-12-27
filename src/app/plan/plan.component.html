@@ -3,7 +3,23 @@
     <div class="all-exercise row">
         <div *ngFor='let c of plans' id="new-exercise">
             <span><h2>{{c.name}}</h2></span>
-            <div id="myDropdown" class="dropdown-content" (click)='displayMenu($event)'>
+            <div id="myDropdown" class="dropdown-content">
+                <a [routerLink]="['../blocks',c.id]">EDIT</a>
+                <a href="#about">VIEW</a>
+                <a href="#contact">DELETE</a>
+              </div>
+        </div>
+        
+        <div id="add-new-exercise">
+            <h2 (click)='addPlan()'>Add new</h2>
+        </div>     
+    </div>
+    <hr/>
+    <h2>Folowing</h2>
+    <div class="all-exercise row">
+        <div *ngFor='let c of plans' id="new-exercise">
+            <span><h2>{{c.name}}</h2></span>
+            <div id="myDropdown" class="dropdown-content">
                 <a [routerLink]="['../blocks',c.id]">EDIT</a>
                 <a href="#about">VIEW</a>
                 <a href="#contact">DELETE</a>

@@ -34,33 +34,40 @@
                     <span id="block_name_head">{{blockName}}</span>
                 </div>
                 <div class="set-cont-block row">
-                    <div class="settings" (click)="changeExerciseName()">
-                        <h6>{{exerciseName}}</h6>
-                        <input id="inpt11" type="text" placeholder="156kg">
-                        <input id="inpt21" type="text" placeholder="156kg">
-                        <input id="inpt31" type="text" placeholder="156kg">
+                    <div class="settings">
+                        <h6 (click)="changeExerciseName()">{{exerciseName}}</h6>
+                        <label>Duration: </label>
+                        <input id="inpt11" type="text" placeholder="minutes" [(ngModel)]="Time">
+                        <label>Distance: </label>
+                        <input id="inpt21" type="text" placeholder="km" [(ngModel)]="Distance">
+                        <label>Weight: </label>
+                        <input id="inpt31" type="text" placeholder="kg" [(ngModel)]="Weight">
+                        <label>Amount: </label>
+                        <input id="inpt41" type="text" placeholder="0" [(ngModel)]="Amount">                        
                     </div>
                     <div class="settings" (click)="changeExerciseName1()">
                         <h6>{{exerciseName1}}</h6>
-                        <input id="inpt12" type="text" placeholder="156kg">
-                        <input id="inpt22" type="text" placeholder="156kg">
-                        <input id="inpt32" type="text" placeholder="156kg">
+                        <input id="inpt11" type="text" placeholder="time">
+                        <input id="inpt21" type="text" placeholder="distance">
+                        <input id="inpt31" type="text" placeholder="weight">
+                        <input id="inpt41" type="text" placeholder="amount">   
                     </div>
                     <div class="settings" (click)="changeExerciseName2()">
                         <h6>{{exerciseName2}}</h6>
-                        <input id="inpt13" type="text" placeholder="156kg">
-                        <input id="inpt23" type="text" placeholder="156kg">
-                        <input id="inpt33" type="text" placeholder="156kg">
+                        <input id="inpt11" type="text" placeholder="time">
+                        <input id="inpt21" type="text" placeholder="distance">
+                        <input id="inpt31" type="text" placeholder="weight">
+                        <input id="inpt41" type="text" placeholder="amount">   
                     </div>
                 </div>
+            </div>
+            <div class="cust-btn-holder">
+                <button class="btncust btn btn-success" (click)="addNewPlan()">CONFIRM</button>
+                <button class="btncust btn btn-danger">CANCEL</button>
             </div>
             <!--<div class="add-new-block" (click)="addBlock()">
                 ADD BLOCK 
             </div>-->
-        </div>
-        <div class="cust-btn-holder">
-            <button class="btn btn-success" (click)="addNewPlan()">CONFIRM</button>
-            <button class="btn btn-danger">CANCEL</button>
         </div>
     </div>
 </div>

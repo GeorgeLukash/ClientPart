@@ -31,11 +31,6 @@ export class PlanComponent implements OnInit {
     this.apiService.post('user/plan', this.plan).subscribe((respons) => { });
     location.reload();
   }
-
-  displayMenu(event) {
-    event.target.classList.add('show'); 
-    //this.show = !this.show;
-  }
   redirect() {
     this.router.navigate(['./main/blocks']);
   }
