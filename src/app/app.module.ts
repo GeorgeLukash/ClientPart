@@ -29,6 +29,7 @@ import { PlansdetailsComponent } from './plansdetails/plansdetails.component';
 
 import { AccessGuard } from './guards/access.guard';
 import { CoachGuard } from './guards/coach.guard';
+import { PythonService } from './services/api.python.service';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,7 @@ import { CoachGuard } from './guards/coach.guard';
     HttpModule,
     routes
   ],
-  providers: [ApiService, AccessGuard, CoachGuard, AuthService],
+  providers: [ApiService, AccessGuard, CoachGuard, AuthService, PythonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

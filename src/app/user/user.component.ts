@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Profile } from '../model/profile.component.model';
 import { ApiService } from '../services/api.service';
 import { Image } from '../model/image.model';
+import { AppConfig } from '../app.config';
+import { PythonService } from '../services/api.python.service';
 
 @Component({
   selector: 'app-user',
@@ -10,19 +12,26 @@ import { Image } from '../model/image.model';
 })
 export class UserComponent implements OnInit {
 
-  private profile: Profile;
+  private profile: Profile = new Profile();
   private image: Image = new Image();
   private img_df: string;
 
   private css_class1: string;
   private css_class2: string;
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService, private pythonService: PythonService) { }
 
   ngOnInit() {
-    this.apiService.get('user/profile').subscribe((response) => {
-      this.profile = response.json();
-      
+    if (AppConfig.url === 'localhost:5000') {
+      this.pythonService.get('user/profile').subscribe((response) => {
+        this.profile = response.json();
+      });
+    }
+    else {
+      this.apiService.get('user/profile').subscribe((response) => {
+        this.profile = response.json();
+      });
+
       if (this.profile.image === null) {
         this.css_class2 = 'cust-hide';
         if (this.profile.sex === 0) {
@@ -36,8 +45,7 @@ export class UserComponent implements OnInit {
         this.css_class1 = 'cust-hide';
         this.css_class2 = 'cust-show';
       }
-    });
-
+    }
 
   }
 

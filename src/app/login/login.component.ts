@@ -3,6 +3,9 @@ import { Router } from '@angular/router';
 import { Http, RequestOptionsArgs, Headers } from '@angular/http';
 import { RequestOptions } from '@angular/http/src/base_request_options';
 import { ApiService } from '../services/api.service';
+import {AppConfig} from '../app.config';
+import { PythonService } from '../services/api.python.service';
+import { PythonAuth } from '../model/python.auth.model';
 
 @Component({
     selector: 'app-login',
@@ -15,8 +18,9 @@ export class LoginComponent implements OnInit {
     logName: string;
     showError: boolean;
     images: any;
+    auth: PythonAuth;
 
-    constructor(private router: Router, private _httpService: Http, private apiService: ApiService) { }
+    constructor(private router: Router, private _httpService: Http, private apiService: ApiService ,private pythonService: PythonService) { }
 
     ngOnInit() {
         this.showError = false;
@@ -24,6 +28,23 @@ export class LoginComponent implements OnInit {
 
     login() {
 
+        if(AppConfig.url === 'localhost:5000')
+        {
+            let body:PythonAuth = new PythonAuth();
+            body.email = this.email;
+            body.password = this.password;
+            this.pythonService.post('login', JSON.stringify(body)).subscribe((response)=>
+            {
+                localStorage.setItem('token', response.json().token);
+                this.pythonService.get('get_me').subscribe((response)=>
+                {
+                    localStorage.setItem('user_type', response.json().userType);
+                    localStorage.setItem('user_id', response.json().user_id);
+                    this.router.navigate(['main/news']);    
+                })
+            })
+        }
+        else{
         const arrKey: string[] = [];
         let logIn: Boolean;
         logIn = false;
@@ -51,6 +72,7 @@ export class LoginComponent implements OnInit {
 
                 this.router.navigate(['main/news']);
             });
+        }
     }
 }
 

@@ -6,7 +6,7 @@ import { Observable } from 'rxjs/Observable';
 import * as $ from 'jquery';
 
 @Injectable()
-export class ApiService {
+export class PythonService {
     private token: string = localStorage.getItem('token');
 
     private defaultOptions: { [key: string]: any } = {
@@ -69,7 +69,7 @@ export class ApiService {
 
         this.addToken(url, options);
         options['headers']['Content-Type'] = 'application/json; charset=utf-8';
-        const observable = this.http.request('http://localhost:57848/' + url, options);
+        const observable = this.http.request('http://localhost:5000/' + url, options);
 
         return observable;
     }
@@ -77,7 +77,7 @@ export class ApiService {
     private addToken(url: string, options: { [key: string]: any }): void {
         const token = localStorage.getItem('token');
         if (token) {
-            options['headers']['Authorization'] = `Bearer ${token}`;
+            options['headers']['Authorization'] = `${token}`;
         }
     }
 
