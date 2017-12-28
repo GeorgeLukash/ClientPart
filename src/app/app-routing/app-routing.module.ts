@@ -81,7 +81,7 @@ export const router: Routes = [
             component: CoachplansComponent
         },
         {
-            path: 'plansdetails',
+            path: 'plansdetails/:id',
             component: PlansdetailsComponent
         }
         ]
