@@ -19,4 +19,8 @@ export class CoachplansComponent implements OnInit {
       this.plans = response.json();
     });
   }
+
+  follow(id:number):void {
+    this.apiService.get('user/apply/'+id).subscribe((response)=>{})
+  }
 }
