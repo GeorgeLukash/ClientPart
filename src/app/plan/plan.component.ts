@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class PlanComponent implements OnInit {
 
   private plans: Plan[];
+  private recommends:Plan[];
   private plan: Plan = new Plan();
 
   private show: Boolean = false;
@@ -21,6 +22,8 @@ export class PlanComponent implements OnInit {
     this.apiService.get('user/plans').subscribe((response) => {
       this.plans = response.json();
       console.log(this.plans);
+
+      this.apiService.get('user/my_recommended').subscribe((response)=>{this.recommends = response.json()})
     });
   }
 
@@ -41,5 +44,10 @@ export class PlanComponent implements OnInit {
   }
   redirect() {
     this.router.navigate(['./main/blocks']);
+  }
+
+  unfollow(id:number)
+  {
+    this.apiService.get('user/unfollow/'+id).subscribe((response)=>{location.reload()})
   }
 }
