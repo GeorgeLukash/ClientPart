@@ -45,19 +45,27 @@
                         <label>Amount: </label>
                         <input id="inpt41" type="text" placeholder="0" [(ngModel)]="Amount">                        
                     </div>
-                    <div class="settings" (click)="changeExerciseName1()">
-                        <h6>{{exerciseName1}}</h6>
-                        <input id="inpt11" type="text" placeholder="time">
-                        <input id="inpt21" type="text" placeholder="distance">
-                        <input id="inpt31" type="text" placeholder="weight">
-                        <input id="inpt41" type="text" placeholder="amount">   
+                    <div class="settings">
+                        <h6 (click)="changeExerciseName()">{{exerciseName1}}</h6>
+                        <label>Duration: </label>
+                        <input id="inpt11" type="text" placeholder="minutes" [(ngModel)]="Time">
+                        <label>Distance: </label>
+                        <input id="inpt21" type="text" placeholder="km" [(ngModel)]="Distance">
+                        <label>Weight: </label>
+                        <input id="inpt31" type="text" placeholder="kg" [(ngModel)]="Weight">
+                        <label>Amount: </label>
+                        <input id="inpt41" type="text" placeholder="0" [(ngModel)]="Amount">                        
                     </div>
-                    <div class="settings" (click)="changeExerciseName2()">
-                        <h6>{{exerciseName2}}</h6>
-                        <input id="inpt11" type="text" placeholder="time">
-                        <input id="inpt21" type="text" placeholder="distance">
-                        <input id="inpt31" type="text" placeholder="weight">
-                        <input id="inpt41" type="text" placeholder="amount">   
+                    <div class="settings">
+                        <h6 (click)="changeExerciseName()">{{exerciseName2}}</h6>
+                        <label>Duration: </label>
+                        <input id="inpt11" type="text" placeholder="minutes" [(ngModel)]="Time">
+                        <label>Distance: </label>
+                        <input id="inpt21" type="text" placeholder="km" [(ngModel)]="Distance">
+                        <label>Weight: </label>
+                        <input id="inpt31" type="text" placeholder="kg" [(ngModel)]="Weight">
+                        <label>Amount: </label>
+                        <input id="inpt41" type="text" placeholder="0" [(ngModel)]="Amount">                        
                     </div>
                 </div>
             </div>

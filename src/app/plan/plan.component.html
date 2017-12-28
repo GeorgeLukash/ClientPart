@@ -27,7 +27,7 @@
             <span><h2>{{c.name}}</h2></span>
             <div id="myDropdown" class="dropdown-content">
                 <a [routerLink]="['../blocks',c.id]">EDIT</a>
-                <a href="#about">VIEW</a>
+                <a [routerLink]="['../exercises']">VIEW</a>
                 <a href="#contact">DELETE</a>
               </div>
         </div>

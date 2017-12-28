@@ -30,6 +30,7 @@ import { PlansdetailsComponent } from './plansdetails/plansdetails.component';
 import { AccessGuard } from './guards/access.guard';
 import { CoachGuard } from './guards/coach.guard';
 import { PythonService } from './services/api.python.service';
+import { NewcomponentComponent } from './newcomponent/newcomponent.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { PythonService } from './services/api.python.service';
     UserComponent,
     ProfileComponent,
     NewsComponent,
-    PlansdetailsComponent
+    PlansdetailsComponent,
+    NewcomponentComponent
   ],
   imports: [
     BrowserModule,

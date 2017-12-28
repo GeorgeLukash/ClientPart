@@ -14,6 +14,8 @@ import { BlockGet } from '../model/bbmodel.component';
 export class BlocksComponent implements OnInit {
 
   private blockplan: BlockModel = new BlockModel();
+  private blockplan1: BlockModel = new BlockModel();
+  private blockplan2: BlockModel = new BlockModel();
   private blockParams: BlockParams = new BlockParams();
 
   private blockData: BlockGet[] = [];
@@ -40,6 +42,22 @@ export class BlocksComponent implements OnInit {
   private Createdat: any;
   private Block_id: number;
   private Name: string;
+
+  private Time1: any;
+  private Distance1: number;
+  private Weight1: number;
+  private Amount1: number;
+  private Createdat1: any;
+  private Block_id1: number;
+  private Name1: string;
+
+  private Time2: any;
+  private Distance2: number;
+  private Weight2: number;
+  private Amount2: number;
+  private Createdat2: any;
+  private Block_id2: number;
+  private Name2: string;
 
   constructor(private router: Router,
     private apiService: ApiService,
@@ -106,11 +124,30 @@ export class BlocksComponent implements OnInit {
         this.blockplan.Amount = this.Amount;
         this.blockplan.Weight = this.Weight;
         this.blockplan.Name = this.exerciseName;
-
         this.blockplan.CreatedAt = '11/12/17';
         this.blockplan.BlockId = this.Block_id;
+
+        this.blockplan1.Distance = this.Distance1;
+        this.blockplan1.Time = this.Time1;
+        this.blockplan1.Amount = this.Amount1;
+        this.blockplan1.Weight = this.Weight1;
+        this.blockplan1.Name = this.exerciseName1;
+        this.blockplan1.CreatedAt = '11/12/17';
+        this.blockplan1.BlockId = this.Block_id;
+
+        this.blockplan2.Distance = this.Distance2;
+        this.blockplan2.Time = this.Time2;
+        this.blockplan2.Amount = this.Amount2;
+        this.blockplan2.Weight = this.Weight2;
+        this.blockplan2.Name = this.exerciseName2;
+        this.blockplan2.CreatedAt = '11/12/17';
+        this.blockplan2.BlockId = this.Block_id;
+
+       
         console.log(this.blockplan);
         this.apiService.post('user/exercise', this.blockplan).subscribe((respons) => { });
+        this.apiService.post('user/exercise', this.blockplan1).subscribe((respons) => { });
+        this.apiService.post('user/exercise', this.blockplan2).subscribe((respons) => { });
         console.log(this.blockData);
       });
     });
