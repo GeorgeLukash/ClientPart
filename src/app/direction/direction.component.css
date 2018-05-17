@@ -1,0 +1,220 @@
+.wrapper {
+  text-align: center;
+}
+
+/*-----Modal content-----*/
+
+.users-list label {
+  width: 60%;
+  border: 1px solid black;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  padding: 3px 5px;
+  text-align: justify;
+}
+
+.users-list {
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 15px;
+  padding: 10px 0;
+  text-align: center;
+  margin: 15px 0;
+}
+
+.users-list ul {
+  list-style-type: none;
+  margin: 5px auto;
+  width: 50%;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding-right: 40px;
+}
+
+.users-list li {
+  margin: 0 auto;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  /*border-bottom: 1px solid black;*/
+}
+
+.users-list li span {
+  border: none;
+}
+
+.users-list li:last-child {
+  border-bottom: none;
+}
+
+.span-cust {
+  font-size: 24px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 5px 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.span-cust:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: black;
+}
+
+/*-----Modal content-----*/
+
+.cust-table {
+  margin: 70px 0 0 25px;
+  width: 70%;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  /*border: 5px solid rgba(0, 0, 0, 0.2);*/
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.cust-table th {
+  padding: 15px 20px;
+  font-size: 24px;
+  border-right: 1px solid white;
+  border-bottom: 2px solid white;
+}
+
+.cust-table th:last-child {
+  border-right: none;
+}
+
+.cust-table td {
+  padding: 10px 15px;
+  font-size: 20px;
+  border-right: 1px solid white;
+  border-bottom: 2px solid white;
+}
+
+.cust-table td:last-child {
+  border-right: none;
+  height: 50px;
+}
+
+.cust-table tr:last-child td {
+  border-bottom: none;
+}
+
+/*--------------Modal Window--------------*/
+
+/* The Modal (background) */
+
+.modal {
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+/* Modal Content */
+
+.modal-content {
+  background-color: rgba(0, 0, 0, 0.4);
+  margin: auto;
+  padding: 20px;
+  /*border: 1px solid #888;*/
+  width: 50%;
+  height: 450px;
+  overflow: auto;
+}
+
+/* The Close Button */
+
+.close-cust {
+  widows: 20% !important;
+  color: white !important;
+  float: right !important;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-cust:hover {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+/*--------------Modal Window--------------*/
+
+/*--------------add-new-dir---------------*/
+
+.add-new-dir {
+  width: 100%;
+  height: 150px;
+  text-align: center;
+  padding: 40px 0 0 0;
+}
+
+.add-new-dir a {
+  color: white;
+  font-size: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.add-new-dir a:hover {
+  text-decoration: none;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+hr {
+  border: 2px solid white;
+  width: 80%;
+}
+
+.cu-span {
+  color: white;
+  font-size: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.inp-holder {
+  /*background-color: red;*/
+  width: 80%;
+  margin: 70px 0 0 0;
+  padding: 25px 50px 25px 150px;
+  text-align: center;
+}
+
+.inp-holder label {
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+}

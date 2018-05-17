@@ -1,0 +1,109 @@
+<div class="wrapper">
+  <div class="add-new-dir">
+    <a [routerLink]="['../newdirection']">ADD NEW DIRECTION</a>
+  </div>
+  <hr/>
+  <table class="cust-table">
+    <tr>
+      <th colspan="8">MY DIRECTIONS</th>
+    </tr>
+    <tr>
+      <th>EDIT</th>
+      <th>NAME</th>
+      <th>DIRECTION</th>
+      <th>SPEED(mps)</th>
+      <th>DISTANCE(km)</th>
+      <th>DURATION(min)</th>
+      <th>Search</th>
+      <th>Delete</th>
+    </tr>
+    <tr *ngIf="directions.length == 0">
+      <td colspan="8">EMPTY DIRECTION SCHEDULE</td>
+    </tr>
+    <tr *ngFor="let dir of directions">
+      <td>
+        <button type="button" (click)="showModal(dir.id)" class="btn btn-warning">Edit</button>
+      </td>
+      <td>{{dir.directionName}}</td>
+      <td>{{dir.street}}</td>
+      <td>{{dir.speed}}</td>
+      <td>{{dir.distance}}</td>
+      <td>{{dir.duration/60}}</td>
+      <td>
+        <button type="button" (click)="getData(dir.streetId)" class="btn btn-warning">Find</button>
+      </td>
+      <td>
+        <button type="button" (click)="deleteDirection(dir.id)" class="btn btn-danger">X</button>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
+  <div id="myModal" class="modal {{class1}}">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close-cust" (click)="hideModal()">Close</span>
+      <div class="users-list" *ngFor="let d of dir">
+        <label *ngIf="flag">User : {{d.firstName}} {{d.lastName}}</label>
+        <label *ngIf="!flag">User : {{d.userFirstName}} {{d.userLastName}}</label>
+        <br/>
+        <label>Direction Name : {{d.directionName}}</label>
+        <br/>
+        <label>Street name : {{d.street}}</label>
+        <br/>
+        <span class="span-cust">Other User directions</span>
+        <ul>
+          <li *ngFor="let u of allOtherDirections">
+            <span *ngIf="(d.userId == u.userId)&&(d.streetId !=u.streetId)">{{u.street}}</span>
+          </li>
+          <li>
+            <span>No other directions</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div id="myModal1" class="modal {{class2}}">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close-cust" (click)="hideModal()">Close</span>
+      <div class="inp-holder">
+        <label for="DirectionName">Direction name</label>
+        <input type="text" name="DirectionName" placeholder="Enter direction name" [(ngModel)]="directionName">
+        <br/>
+
+        <label for="Speed">Speed(mps)</label>
+        <input type="text" name="Speed" placeholder="Enter speed" [(ngModel)]="speed" (blur)="getDuration()">
+        <br/>
+        <label for="directions">Choose direction</label>
+        <select name="directions" [(ngModel)]="street" (click)="findWay(street)">
+          <option value="-1" disabled selected>Choose Direction</option>
+          <option *ngFor="let way of streets" [ngValue]="way.id" (click)="show()">{{way.name}}</option>
+        </select>
+        <br/>
+        <label for="distance">Distance(km)</label>
+        <input type="text" name="distance" [(ngModel)]="distance" readonly class="readonly-cust">
+        <br/>
+        <label for="duration">Duration(minutes)</label>
+        <input type="text" name="duration" [(ngModel)]="duration" readonly class="readonly-cust">
+        <br/>
+        <button type="button" id="add" (click)="updateDirection()" class="btn btn-success">Update direction</button>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

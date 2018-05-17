@@ -1,0 +1,34 @@
+<div class="wrapper">
+  <div class="inp-holder">
+    <label for="DirectionName">Direction name</label>
+    <input type="text" name="DirectionName" placeholder="Enter direction name" [(ngModel)]="directionName">
+    <br/>
+
+    <label for="Speed">Speed(mps)</label>
+    <input type="text" name="Speed" placeholder="Enter speed" [(ngModel)]="speed" (blur)="getDuration()">
+    <br/>
+    <label for="directions">Choose direction</label>
+    <select name="directions" [(ngModel)]="street" (click)="findWay(street)">
+      <option value="-1" disabled selected>Choose Direction</option>
+      <option *ngFor="let way of streets" [ngValue]="way.id" (click)="show()">{{way.name}}</option>
+    </select>
+    <br/>
+    <label for="distance">Distance(km)</label>
+    <input type="text" name="distance" [(ngModel)]="distance" readonly class="readonly-cust">
+    <br/>
+    <label for="duration">Duration(minutes)</label>
+    <input type="text" name="duration" [(ngModel)]="duration" readonly class="readonly-cust">
+    <br/>
+    <button type="button" id="add" (click)="addDirection()" class="btn btn-success">Add direction</button>
+  </div>
+
+  <div id="myModal" class="modal {{class1}}">
+
+      <!-- Modal content -->
+      <div class="modal-content">        
+        <p>&#10004;<br/>Successfully added new direction!</p>
+      </div>
+    
+    </div>
+
+</div>

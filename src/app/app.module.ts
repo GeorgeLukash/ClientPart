@@ -32,6 +32,12 @@ import { CoachGuard } from './guards/coach.guard';
 import { PythonService } from './services/api.python.service';
 import { NewcomponentComponent } from './newcomponent/newcomponent.component';
 
+import { AgmCoreModule, GoogleMapsAPIWrapper } from '@agm/core';
+import { AgmDirectionModule } from 'agm-direction';
+import { DirectionComponent } from './direction/direction.component';
+import { NewDirectionComponent } from './new-direction/new-direction.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +55,8 @@ import { NewcomponentComponent } from './newcomponent/newcomponent.component';
     ProfileComponent,
     NewsComponent,
     PlansdetailsComponent,
-    NewcomponentComponent
+    NewcomponentComponent,    
+    DirectionComponent, NewDirectionComponent
   ],
   imports: [
     BrowserModule,
@@ -58,9 +65,13 @@ import { NewcomponentComponent } from './newcomponent/newcomponent.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    routes
+    routes,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyA5XYEemh-UTNvEBOJw9AcDJLE-ki4SooY'
+    }),
+    AgmDirectionModule
   ],
-  providers: [ApiService, AccessGuard, CoachGuard, AuthService, PythonService],
+  providers: [ApiService, AccessGuard, CoachGuard, AuthService, PythonService, GoogleMapsAPIWrapper],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

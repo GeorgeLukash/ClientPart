@@ -53,6 +53,7 @@ export class RegistrationComponent implements OnInit {
                 this.user.role = 'User';
             }
             if (AppConfig.url === 'localhost:5000') {
+                console.log(this.user);
                 this.pythonService.post('registration', JSON.stringify(this.user)).subscribe(
                     (response) => {console.log(response.json()) },
                     err => console.error(err)

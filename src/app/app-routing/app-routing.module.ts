@@ -17,13 +17,17 @@ import { CoachComponent } from '../coach/coach.component';
 import { CoachplansComponent } from '../coachplans/coachplans.component';
 import { AdminComponent } from '../admin/admin.component';
 import { PlansdetailsComponent } from '../plansdetails/plansdetails.component';
+import { DirectionComponent } from '../direction/direction.component';
+
 import { AccessGuard } from '../guards/access.guard';
 import { CoachGuard } from '../guards/coach.guard';
+import { NewDirectionComponent } from '../new-direction/new-direction.component';
 
 export const router: Routes = [
     {
         path: '',
         redirectTo: 'registration',
+        //redirectTo:'main/userpath',
         pathMatch: 'full'
     },
     {
@@ -44,7 +48,7 @@ export const router: Routes = [
         component: MainComponent,
         children: [{
             path: 'user',
-            component: UserComponent            
+            component: UserComponent
         },
         {
             path: 'plans',
@@ -74,7 +78,7 @@ export const router: Routes = [
         {
             path: 'coach',
             component: CoachComponent,
-            canActivate:[CoachGuard]
+            canActivate: [CoachGuard]
         },
         {
             path: 'coachplans',
@@ -83,6 +87,14 @@ export const router: Routes = [
         {
             path: 'plansdetails/:id',
             component: PlansdetailsComponent
+        },
+        {
+            path: 'newdirection',
+            component: NewDirectionComponent
+        },
+        {
+            path: 'direction',
+            component: DirectionComponent
         }
         ]
     }

@@ -1,0 +1,111 @@
+.wrapper {
+  text-align: center;
+}
+
+.inp-holder {
+  /*background-color: red;*/
+  width: 80%;
+  margin: 70px 0 0 0;
+  padding: 25px 50px 25px 150px;
+  text-align: center;
+}
+
+.inp-holder label {
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.inp-holder input,
+.inp-holder select {
+  width: 60%;
+  float: right;
+  padding: 5px 7px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.inp-holder select {
+  margin: 2px 0 0 0;
+}
+
+.readonly-cust {
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  color: black;
+}
+
+/*Modal*/
+
+.modal {
+  display: block;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+/* Modal Content */
+
+.modal-content {
+  background-color: #22c013;
+  border: 3px solid #4bf53b;
+  color: #085502;
+  margin: auto;
+  padding: 20px;
+  width: 50%;
+  font-size: 32px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.show {
+  display: block;  
+  animation-name: example;
+  animation-duration: 2s;
+}
+
+.hide {
+  display: none;  
+}
+
+/*Modal*/
+
+/* Safari 4.0 - 8.0 */
+
+@-webkit-keyframes example {
+  0% {
+    opacity: 1;    
+  }
+  100% {
+    display: none;
+    opacity: 0;    
+  }
+}
+
+/* Standard syntax */
+
+@keyframes example {
+  0% {
+    opacity: 1;    
+  }  
+  100% {
+    display: none;
+    opacity: 0;    
+  }
+}
